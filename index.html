@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unlucky Dip design previews</title>
+<title>unluckydip.com design previews</title>
 <meta name="description" content="Three website directions for Unlucky Dip, home of Shitebox. Design previews for review, 11 November 2026.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/brand/unlucky-dip-thumb.svg">
@@ -20,11 +20,13 @@ a{color:inherit}
 header{padding-block:clamp(2.5rem,7vw,5rem) 2rem;border-bottom:1px solid var(--line)}
 .lockup{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.25rem);flex-wrap:wrap}
 .lockup img{width:clamp(72px,12vw,128px);height:auto}
+.lockup h1 span{color:var(--ink)}
 .lockup h1{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,8vw,5.5rem);line-height:.95;color:var(--purple);margin:0;letter-spacing:.01em}
 header p{max-width:46rem;margin:1.5rem 0 0;font-size:1.1rem}
 header p strong{font-weight:700}
 main{padding-block:2.5rem 4rem}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.grid.two{grid-template-columns:repeat(2,1fr)}
 .card{border:2px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:#fff}
 .card img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:2px solid var(--ink)}
 .card .t{padding:1.25rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
@@ -38,6 +40,10 @@ main{padding-block:2.5rem 4rem}
 .card li a:hover{background:var(--purple);border-color:var(--purple);color:#fff}
 .round{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:1.5rem;margin:2.5rem 0 .4rem}
 .round:first-child{margin-top:0}
+.card.pick{display:grid;grid-template-columns:3fr 2fr}
+.card.pick img{height:100%;border-bottom:0;border-right:2px solid var(--ink)}
+.card.pick h2{font-size:2.2rem}
+@media (max-width:980px){.card.pick{grid-template-columns:1fr}.card.pick img{border-right:0;border-bottom:2px solid var(--ink)}}
 .roundnote{margin:0 0 1.25rem;max-width:46rem}
 .round + .grid{margin-top:1rem}
 .notes{margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
@@ -51,13 +57,20 @@ footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;co
 <body>
 <header>
   <div class="wrap">
-    <div class="lockup"><img src="assets/brand/unlucky-dip-thumb.svg" alt="" width="128" height="118"><h1>UNLUCKY DIP</h1></div>
-    <p><strong>Six website directions for Unlucky Dip, home of Shitebox.</strong> Each one has a home page, a "WTF is Shitebox?" page and the small print. They share the same words, prices and logo, so the only thing to judge is the look. Design previews, 11 November 2026. Nothing is for sale yet.</p>
+    <div class="lockup"><img src="assets/brand/unlucky-dip-thumb.svg" alt="" width="128" height="118"><h1>UNLUCKYDIP<span>.COM</span></h1></div>
+    <p><strong>Rave Flyer is the chosen design.</strong> Scott picked it on 11 November 2026 and sent a list of changes. Version 4 below has all of them in. The other five designs are kept underneath for reference and have not been changed. Nothing is for sale yet.</p>
   </div>
 </header>
 <main>
   <div class="wrap">
-    <h2 class="round">Round two: three new worlds</h2>
+    <h2 class="round">The chosen design: Rave Flyer, version 4</h2>
+    <p class="roundnote">Shorter hero with "You get what you're given" back as the main line, a purple paint texture, Ninja Box and Box Scan in the menu, three sizes, 60% upcycled, and a home page with half the sections it had.</p>
+    <article class="card pick">
+      <img src="assets/previews/rave.webp" width="1440" height="900" alt="Rave Flyer version 4 home page: a purple hero that reads You get what you're given, above three coloured box sizes">
+      <div class="t"><span class="tag new">Version 4, 11 November</span><h2>Rave Flyer</h2>
+        <ul><li><a href="rave/index.html">Home</a></li><li><a href="rave/order.html">Order (set the trap)</a></li><li><a href="rave/ninja.html">Ninja Box</a></li><li><a href="rave/scan.html">Box Scan</a></li><li><a href="rave/wtf.html">WTF is Shitebox?</a></li><li><a href="rave/small-print.html">Small print</a></li></ul></div>
+    </article>
+    <h2 class="round">Not chosen: round two</h2>
     <p class="roundnote">Built after the first three were judged too alike. Each takes its look from a different kind of site: a retro computer desktop, a luxury house, and the charity shop itself.</p>
     <div class="grid">
       <article class="card">
@@ -76,13 +89,8 @@ footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;co
           <ul><li><a href="bric/index.html">Home</a></li><li><a href="bric/wtf.html">WTF is Shitebox?</a></li><li><a href="bric/small-print.html">Small print</a></li></ul></div>
       </article>
     </div>
-    <h2 class="round">Round one</h2>
+    <h2 class="round">Not chosen: round one</h2>
     <div class="grid">
-      <article class="card">
-        <img src="assets/previews/rave.webp" width="1440" height="900" alt="Rave Flyer home page: yellow poster layout with a purple photo panel">
-        <div class="t"><span class="tag">Selected on 6 November</span><h2>1. Rave Flyer</h2><p>The one Scott chose, with his changes applied: a calm stretch a third of the way down, founders off the home page, 40% at the top of the WTF page, and the small print in the footer.</p>
-          <ul><li><a href="rave/index.html">Home</a></li><li><a href="rave/wtf.html">WTF is Shitebox?</a></li><li><a href="rave/small-print.html">Small print</a></li></ul></div>
-      </article>
       <article class="card">
         <img src="assets/previews/dip.webp" width="1440" height="900" alt="Night Dip home page: dark teal fairground stall with a lucky-dip machine">
         <div class="t"><span class="tag">Round one</span><h2>2. Night Dip</h2><p>A lucky-dip stall after dark, in the teal, cyan and pink of Scott's new artwork. Press the Dip button in the hero. The boxes are raffle tickets and the shopping run is a till receipt.</p>
@@ -95,23 +103,24 @@ footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;co
       </article>
     </div>
     <div class="notes">
-      <div><h2>Same in all six</h2><ul>
-        <li>The thumbs-down logo in the four colours, always on white.</li>
-        <li>"Don't know what to get them? Blame us." as the opening line.</li>
-        <li>Two boxes on sale, a third shown as coming soon.</li>
-        <li>An optional brief at the basket: who it's for, what they're shite at, how harsh out of 10, and incognito mode.</li>
-        <li>An email sign-up, a "Got a box?" page for after opening, WhatsApp, FAQ.</li>
-        <li>Round two adds a free-box offer for creators and a note that more Unlucky Dip ranges are coming.</li>
+      <div><h2>Changed in version 4</h2><ul>
+        <li>The name is unluckydip.com everywhere, one word, including the logo.</li>
+        <li>Item counts and "delivered" are gone from the prices. Postage is left to the checkout.</li>
+        <li>"Sarcastic and superb." is a tagline in the hero, not a quote.</li>
+        <li>Home page loses the charity run, the certificate, the reviews and the sign-up section.</li>
+        <li>"Not on sale yet" is a pop-up that opens from the basket and the checkout button.</li>
+        <li>Ninja Box is its own dark page. The questions about the victim moved to the order page, with a Randomise button and two new questions.</li>
+        <li>40% is now 60%, and upcycling and "nifty at being thrifty" run through the copy.</li>
       </ul></div>
       <div><h2>Still to decide</h2><ul>
-        <li>Items per box. The pages say 3 to 4 and 5 to 7 until that is settled.</li>
-        <li>Whether delivery is inside the price. The pages say it is.</li>
-        <li>The two review quotes are marked as expected, not real. Swap in real ones before launch.</li>
-        <li>The sign-up, brief and box-number forms are mock-ups and do not store anything yet.</li>
+        <li>Box dimensions, once the sample boxes are measured. The cards say "the small one" and "the bigger one" until then.</li>
+        <li>How the right to cancel is worded. See the note sent with this version.</li>
+        <li>Whether a Ninja Box costs extra.</li>
+        <li>The sign-up, order and box-number forms are mock-ups and do not store anything yet.</li>
       </ul></div>
     </div>
   </div>
 </main>
-<footer><div class="wrap">Unlucky Dip design previews. Built from the notes and voice messages of 2 to 11 November 2026.</div></footer>
+<footer><div class="wrap">unluckydip.com design previews. Built from the notes and voice messages of 2 to 11 November 2026.</div></footer>
 </body>
 </html>

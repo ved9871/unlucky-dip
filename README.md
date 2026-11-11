@@ -1,78 +1,70 @@
-# Unlucky Dip design previews
+# unluckydip.com
 
-Six website directions for **Unlucky Dip**, home of **Shitebox** (a mystery box of deliberately disappointing presents, around 40% of it rescued from charity shops). These are design previews for review. Nothing is for sale and no form stores anything yet.
+Website for **unluckydip.com**, home of **Shitebox**: a mystery box of deliberately disappointing presents, around 60% of it upcycled from charity shops. This is a design preview. Nothing is for sale and no form stores anything yet.
 
-| Design | Home | WTF is Shitebox? | Small print |
-| --- | --- | --- | --- |
-| 1. Rave Flyer (selected 6 Nov 2026) | [rave/](https://ved9871.github.io/unlucky-dip/rave/) | [wtf](https://ved9871.github.io/unlucky-dip/rave/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/rave/small-print.html) |
-| 2. Night Dip | [dip/](https://ved9871.github.io/unlucky-dip/dip/) | [wtf](https://ved9871.github.io/unlucky-dip/dip/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/dip/small-print.html) |
-| 3. Pop Shite | [pop/](https://ved9871.github.io/unlucky-dip/pop/) | [wtf](https://ved9871.github.io/unlucky-dip/pop/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/pop/small-print.html) |
-| 4. Unlucky Dip 98 (round two) | [os/](https://ved9871.github.io/unlucky-dip/os/) | [wtf](https://ved9871.github.io/unlucky-dip/os/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/os/small-print.html) |
-| 5. Maison Shite (round two) | [maison/](https://ved9871.github.io/unlucky-dip/maison/) | [wtf](https://ved9871.github.io/unlucky-dip/maison/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/maison/small-print.html) |
-| 6. Bric-a-Brac (round two) | [bric/](https://ved9871.github.io/unlucky-dip/bric/) | [wtf](https://ved9871.github.io/unlucky-dip/bric/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/bric/small-print.html) |
+**Rave Flyer is the chosen design** (Scott, 11 Nov 2026). Version 4 in `rave/` has his review applied. The other five designs are kept as they were for reference.
 
-Gallery: https://unlucky-dip.prakashved155.workers.dev/ (Cloudflare, all six designs) and https://ved9871.github.io/unlucky-dip/ (GitHub Pages)
+Preview: https://unlucky-dip.prakashved155.workers.dev/
 
-To redeploy the Cloudflare copy after a change: `npx wrangler deploy` from this folder. `.assetsignore` keeps `_src`, the README and the git folder off the public site.
+| Page | Link |
+| --- | --- |
+| Home | [rave/](https://unlucky-dip.prakashved155.workers.dev/rave/) |
+| Order ("Set the trap") | [rave/order](https://unlucky-dip.prakashved155.workers.dev/rave/order) |
+| Ninja Box | [rave/ninja](https://unlucky-dip.prakashved155.workers.dev/rave/ninja) |
+| Box Scan | [rave/scan](https://unlucky-dip.prakashved155.workers.dev/rave/scan) |
+| WTF is Shitebox? | [rave/wtf](https://unlucky-dip.prakashved155.workers.dev/rave/wtf) |
+| Small print | [rave/small-print](https://unlucky-dip.prakashved155.workers.dev/rave/small-print) |
 
-## The three directions
+Not chosen, unchanged since 11 Nov: `dip/` (Night Dip), `pop/` (Pop Shite, Scott's second choice), `os/` (Unlucky Dip 98), `maison/` (Maison Shite), `bric/` (Bric-a-Brac).
 
-1. **Rave Flyer.** A flyer pinned to a wall: hard grid, Anton headlines, yellow, pink, purple and lime. This is the design Scott chose over the pink one because it "needs to be abnormal".
-2. **Night Dip.** A lucky-dip stall at a fairground after dark, in the dark teal, cyan and pink of Scott's new background artwork. The hero is a tub you can dip into (press the button), the boxes are raffle tickets and the first shopping run is shown as a till receipt.
-3. **Pop Shite.** The site as a comic, matching the pop-art founder portraits. Sections are panels with gutters, narration sits in caption boxes, the boxes are comic covers with the price in the corner and the founders talk in speech bubbles.
+## What version 4 changed (Scott's review, 11 Nov 2026)
 
-### Round two (11 Nov, after the first three were judged too alike)
+Home page
+- Hero is shorter and leads with "You get what you're given." on a purple paint texture (the WTF page keeps the yellow one).
+- "Sarcastic and superb." is a tagline under the headline, not an attributed quote.
+- "Three sizes of disappointment", with the third shown as coming soon.
+- Item counts are gone. Each box card has a size line ready for the real box dimensions.
+- No "delivered" or "delivery included" next to a price. Postage (£4.70) is left to the checkout.
+- Removed from the home page: the charity shopping run and till-receipt numbers, the certificate, the review quotes, the "not on sale yet" sign-up section and the questions about the victim.
+- The second-hand disclaimer is centred.
+- The home page is now hero, ticker, the three boxes, one calm white block ("We're nifty at being thrifty!") and the FAQ.
 
-The second round takes each look from a different kind of real site, using the galleries listed in the `pengsonal/design-inspo` directory as the search space.
+Menu and new pages
+- Menu: The boxes, Ninja Box, Box Scan, WTF is Shitebox?, Basket.
+- **Ninja Box** (`ninja.html`): the unbranded box. Deep purple page with a black box in the middle and the line "Don't let them know what shite they're about to get."
+- **Box Scan** (`scan.html`): replaces "Got a box?". Where people land after scanning, with a box-number field. It does not show or mention what is scanned.
+- **Order** (`order.html`): the buying experience. Pick a size, choose loud or Ninja, then the questions about the victim (who, what they're shite at, what they think they're great at, the stupidest thing they've done, harshness out of 10) with a large Randomise button.
+- **Not on sale yet** is a pop-up with the email sign-up. It opens from the basket and from "Go to checkout".
 
-4. **Unlucky Dip 98.** The site as an old computer desktop (the Poolsuite and Vacation Inc school). Sections are windows, the menu is the taskbar, the 40% lives in the Recycle Bin, the calm stretch is a Notepad file and the small print is the blue error screen.
-5. **Maison Shite.** A luxury house with a straight face: black box on a plinth, fine serif type, roman numerals, hairlines and space. It matches the real packaging plan, a premium black magnetic box with shite inside.
-6. **Bric-a-Brac.** The charity shop itself: cardboard, masking tape, price-gun stickers, swing tags on a rail, a clipboard and a till receipt.
+WTF page
+- Three wording changes as written by Scott, and the 14-day line removed from the short small print.
 
-Round two also adds two pieces of content from the project notes: a free-box offer for creators, and a line that Shitebox is the first of several Unlucky Dip ranges.
+Copy
+- The name is always unluckydip.com, one word, including the logo.
+- 40% is now 60%.
+- "Upcycled" and "We're nifty at being thrifty!" run through the pages.
 
-## Feedback applied (Scott, 30 Oct to 11 Nov 2026)
+## Rules that still apply
 
-- Rave Flyer selected; a calm stretch about a third of the way down every design, then the loud treatment returns.
-- Opening line is the gift problem: "Don't know what to get them? Blame us."
-- Founders removed from the home page. They sit at the bottom of the WTF page with the line "We're the founders. Our goal is to help charities and have fun." No names, no location, and every "we're shy" reference is gone.
-- "WTF is Shitebox?" replaces the About and Not So Shy naming. The 40% figure and "Having fun. Helping charities." lead that page.
-- "How we shop for shite" uses Scott's wording: "Our poorly trained team hunt out the best shite for your boxes from charity shops throughout the UK. When you buy a Shitebox you are supporting charities."
-- Charities listed: British Heart Foundation, Mind, YMCA, Oxfam, St Barnabas.
-- The line about the card at the bottom of the box is removed. Inserts and jokes stay a surprise.
-- The Not So Shy merchandise section and the Hall of Fame are removed for now.
-- Small print moved to the footer with its own page, including "This does not affect your statutory rights."
-- Two quotes added: "Sarcastic and superb." and the insult-my-husband one. They are labelled "Reviews we're expecting" because nobody has said them yet.
-- Logo: thumbs-down in the four colours with the Unlucky Dip text, always on a white background.
-- New from the 8 Nov voice notes: an optional order brief (who it's for, what they're shite at, harshness out of 10) and incognito mode (nothing on the outside of the box).
-- New from the 10 and 11 Nov voice notes: an email sign-up band, so interest can be tested before launch.
-- "Got a box?" is for after opening only: type the box number from the Certificate of Approval. It does not reveal contents on the sales pages.
+- Logo: the thumbs-down in the four colours, always on white.
+- Founders only at the bottom of the WTF page. No names, no location.
+- Say "shite", never the other word.
+- What is in a box, and what is printed inside it, stays secret.
+- Charities: say we buy from their shops. Never imply a donation, partnership or endorsement.
 
-## Before any of this goes live
+## Before anything is sold
 
-- **Reviews.** Publishing invented customer reviews is banned in the UK. Replace the two expected quotes with real ones, or keep the "expecting" label.
-- **Charity wording.** We buy stock from charity shops; that is the support. The pages say the charities have not endorsed us and promise no fixed donation. Any "£X per box goes to charity" claim needs a written agreement with that charity first.
-- **Delivery.** The pages say UK delivery is included in the price. The current pricing model has no postage line, so either the prices or that sentence has to change.
-- **Items per box.** Shown as "3 to 4" and "5 to 7" until the count is decided.
-- **Forms.** Sign-up, brief and box-number forms are front-end mock-ups.
-- **Contact.** `hello@unluckydip.com` and the WhatsApp number are placeholders.
+- **Postage.** UK pricing rules expect a compulsory delivery charge to be shown with the price, not first revealed at the checkout. Decide how to show the £4.70 before launch.
+- **Cancelling.** Online orders carry a 14-day right to cancel that a mystery box does not escape. The small print states it, with the buyer paying return postage, and says personalised boxes cannot be cancelled once packing starts. Have that wording checked.
+- **Forms.** The sign-up, order and box-number forms are mock-ups.
+- `hello@unluckydip.com` and the WhatsApp number are placeholders.
 
-## How it is built
+## Building
 
-Plain HTML and CSS, no framework. Words that must match across designs (FAQ, small print, charities, prices, the order brief) live once in `_src/build.py` and are injected into each design's templates.
+Templates and the stylesheet are in `_src/rave/`. Shared copy (menu, footer, FAQ, small print, the pop-up) is in `_src/build.py`.
 
 ```
-_src/build.py            shared copy and the build step
-_src/<design>/           templates and stylesheet for each design
-rave/ dip/ pop/ os/ maison/ bric/   built pages (what GitHub Pages serves)
-assets/                  logo, founder portraits, backgrounds, certificate, previews
-index.html               gallery
-```
-
-Rebuild after editing anything in `_src`:
-
-```bash
 python _src/build.py
 ```
 
-Asset credits: founder portraits, splash backgrounds and the Certificate of Approval are by Scott. The thumbs-down shape is adapted from Material Icons (Apache 2.0).
+Deploy the preview to Cloudflare from this folder with `npx wrangler deploy`. `.assetsignore` keeps `_src`, the README and the git folder off the public site.

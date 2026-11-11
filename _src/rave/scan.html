@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<title>Box Scan. unluckydip.com</title>
+<meta name="description" content="Box Scan: got a Shitebox? Scan it, or type in your box number, and we explain ourselves item by item.">
+{{HEAD}}
+</head>
+<body>
+
+{{NAV_SCAN}}
+
+<header class="scan-hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Got a box? Scan it.</p>
+      <h1>Box Scan.</h1>
+      <p class="lede">Every Shitebox has something on it to scan. We're not saying where. Scan it once the box is open and we explain ourselves, item by item: what it is, where we rescued it from, and why we thought you deserved it.</p>
+    </div>
+    <div class="scanner" aria-hidden="true"><span></span><i></i></div>
+  </div>
+</header>
+
+<section class="scan-form">
+  <div class="wrap">
+    <div>
+      <h2>Can't scan? Type it in.</h2>
+      <p>Your box number is on the box. It looks like SB-00042.</p>
+      <form id="scanform" novalidate>
+        <label for="boxno">Box number</label>
+        <div class="row"><input id="boxno" name="boxno" placeholder="SB-00042" autocomplete="off" inputmode="text"><button class="btn" type="submit">Scan my box</button></div>
+        <p class="result" id="scanres" role="status" hidden></p>
+      </form>
+    </div>
+    <div class="nobox">
+      <h3>Haven't got a box?</h3>
+      <p>Then there's nothing to scan. Buy one, or have one sent to someone who has it coming, and this page starts making sense.</p>
+      <a class="btn" href="index.html#boxes">See the boxes</a>
+    </div>
+  </div>
+</section>
+
+{{FOOTER_PLAIN}}
+
+{{SOON}}
+{{WA}}
+
+<script>
+document.getElementById('scanform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=document.getElementById('boxno').value.trim().toUpperCase(),r=document.getElementById('scanres');
+  r.hidden=false;
+  r.textContent=!v?'Type the number from your box first.':
+    /^SB-?\d{3,6}$/.test(v)?'No box '+v+' on record yet. We have not sent any out. Check the number, or come back once yours has arrived.':
+    'That does not look like a box number. They start with SB, then a dash and five digits.';
+});
+</script>
+
+</body>
+</html>

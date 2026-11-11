@@ -1,25 +1,19 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>WTF is Shitebox? Unlucky Dip</title>
-<meta name="description" content="WTF is Shitebox? Around 40% of what goes in a box is rescued from charity shops. Having fun. Helping charities.">
-<meta name="robots" content="noindex">
-<link rel="icon" href="../assets/brand/unlucky-dip-thumb.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700;900&display=swap">
-<link rel="stylesheet" href="style.css">
+<title>WTF is Shitebox? unluckydip.com</title>
+<meta name="description" content="WTF is Shitebox? Around {{PCT}} of every box is upcycled from charity shops. Having fun. Helping charities.">
+{{HEAD}}
 </head>
 <body>
 
-<nav class="main" aria-label="Main"><div class="wrap">{{LOGO}}<div class="links"><a href="index.html#boxes">The boxes</a><a href="index.html#shop">How we shop</a><a href="index.html#inside">Inside</a><a href="index.html#find">Got a box?</a><a href="wtf.html" aria-current="page">WTF is Shitebox?</a></div><a class="cart" href="index.html#boxes">Basket 0</a></div></nav>
+{{NAV_WTF}}
 
 <header class="forty">
   <div class="wrap">
-    <div class="pct" aria-hidden="true">40%</div>
+    <div class="pct" aria-hidden="true">{{PCT}}</div>
     <div>
-      <h1><span>Around 40% of the shite is rescued from charity shops.</span></h1>
+      <h1><span>Around {{PCT}} of every box is upcycled from charity shops.</span></h1>
       <span class="motto">Having fun. <span>Helping charities.</span></span>
     </div>
   </div>
@@ -29,26 +23,26 @@
   <div class="wrap">
     <h2>WTF is Shite&shy;box?</h2>
     <div>
-      <p class="big">A mystery box of presents nobody asked for, for people who can't be arsed to choose one.</p>
-      <p>Buying a present is a gamble you keep losing. We've removed the gamble by removing the choice. You pick a size. We fill it with some mundane shite and some novelty shite. Whoever opens it has nobody to blame but us.</p>
-      <p>A good chunk of it comes from charity shops. We go round them with a budget and no taste, and the money we spend stays with the charity. So the worse our shopping gets, the more good it does. We're quite proud of that. It's the only thing.</p>
-      <p>We're pranksters, not a gift shop. Every box is different, every box is a surprise, and we will not be telling you what's in yours.</p>
+      <p class="big">A mystery box of presents nobody asked for, from people who can't be arsed to try.</p>
+      <p>Buying a present is a gamble you keep losing. We've removed the gamble by removing the choice. You pick a size. We fill it with upcycled shite, mundane shite and novelty shite. Whoever opens it gets what they're given, and has nobody to blame but us.</p>
+      <p>We're nifty at being thrifty! A good chunk of every box is upcycled. We go round the charity shops with a budget and no taste, and the money we spend stays with the charity. So the worse our shopping gets, the more good it does. We're quite proud of that. It's the only thing.</p>
+      <p>We're pranksters, not a gift shop. Every single box is different, every single box is a surprise, and we will not be telling you what's inside.</p>
     </div>
   </div>
 </section>
 
 <section class="charities" aria-labelledby="ch">
-  <div class="wrap"><div class="head"><h2 id="ch">Where we shop</h2><p>The charities whose shops we raid. We buy the shite, they keep the money.</p></div></div>
+  <div class="wrap"><div class="head"><h2 id="ch">Where we shop</h2><p>The charities whose shops we raid. We upcycle the shite, they keep the money.</p></div></div>
   <ul>{{CHARITY_LI}}</ul>
-  <div class="note">We buy from their shops like anyone else. They haven't endorsed us, and frankly who would.</div>
+  <div class="note">We buy from their shops like anyone else. They haven't endorsed us, and frankly who would...</div>
 </section>
 
 <section class="steps">
   <div class="wrap"><div class="head"><h2>How it works</h2><p>Three steps. You do one of them.</p></div></div>
   <ol>
-    <li><h3>You pick a size</h3><p>Little or Big. Tell us about the victim if you like. That's your whole job.</p></li>
-    <li><h3>We fill it</h3><p>Mundane shite, novelty shite, and things from a charity shop that deserved a second chance.</p></li>
-    <li><h3>They open it</h3><p>You film their face. They scan the certificate. We explain ourselves.</p></li>
+    <li><h3>You pick a size</h3><p>Little or Big. Make it a Ninja Box if they mustn't see it coming. That's your whole job.</p></li>
+    <li><h3>We fill it</h3><p>Upcycled shite that deserved a second chance, plus the mundane and the novelty.</p></li>
+    <li><h3>They open it</h3><p>You film their face. They scan the box. We explain ourselves.</p></li>
   </ol>
 </section>
 
@@ -68,16 +62,9 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div><a class="wordmark" href="index.html">UNLUCKY DIP<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Unlucky Dip parcel tape: beware, crap inside"></div>
-    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="index.html#brief">Make it personal</a></li><li><a href="index.html#find">Got a box?</a></li></ul></div>
-    <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li></ul></div>
-    <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
-  </div>
-  <div class="wrap legal">Shitebox is a product of Unlucky Dip. {{PREVIEW}}</div>
-</footer>
+{{FOOTER_PLAIN}}
 
+{{SOON}}
 {{WA}}
 
 </body>

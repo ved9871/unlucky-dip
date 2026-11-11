@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<title>Set the trap. unluckydip.com</title>
+<meta name="description" content="Order a Shitebox: pick a size, choose whether they see it coming, and tell us about the victim. Or hit Randomise.">
+{{HEAD}}
+</head>
+<body>
+
+{{NAV}}
+
+<main class="order">
+  <header class="wrap order-head">
+    <p class="eyebrow">This is the fun bit</p>
+    <h1>Set the trap.</h1>
+    <p class="lede">Two choices and a few questions about the victim. Can't be arsed with the questions? There's a button for that.</p>
+  </header>
+
+  <form class="wrap steps-form" id="order" novalidate>
+
+    <fieldset class="step">
+      <legend><b>1</b> Pick a size</legend>
+      <div class="opts">
+        <label class="opt lime"><input type="radio" name="box" value="little" data-name="The Little Shite" data-price="{{PRICE_S}}" checked><span class="t">The Little Shite</span><span class="d">The small one.</span><span class="p">{{PRICE_S}}</span></label>
+        <label class="opt pink"><input type="radio" name="box" value="big" data-name="The Big Shite" data-price="{{PRICE_B}}"><span class="t">The Big Shite</span><span class="d">The bigger one.</span><span class="p">{{PRICE_B}}</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><b>2</b> Should they see it coming?</legend>
+      <div class="opts">
+        <label class="opt yellow"><input type="radio" name="outside" value="loud" data-name="Loud and proud" checked><span class="t">Loud and proud</span><span class="d">Our name all over the box. They know before they open it.</span></label>
+        <label class="opt dark"><input type="radio" name="outside" value="ninja" data-name="Ninja Box"><span class="t">Ninja Box</span><span class="d">Plain outside. No name, no warning. <a href="ninja.html">What's a Ninja Box?</a></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><b>3</b> Tell us about the victim</legend>
+      <p class="hint">The more you tell us, the better we aim. All of it is optional.</p>
+      <button class="random" type="button" id="rand" aria-pressed="false"><span>Can't be arsed?</span> Randomise it</button>
+      <p class="potluck" id="potluck" hidden role="status">Pot luck it is. We'll aim blind and hope for the worst. <button type="button" id="unrand">Actually, I'll answer</button></p>
+      <div class="qs" id="qs">
+        <div class="f"><label for="q-name">Who is it for?</label><input id="q-name" name="name" autocomplete="off" placeholder="Lucy"></div>
+        <div class="f"><label for="q-shite">What are they shite at?</label><input id="q-shite" name="shite" autocomplete="off" placeholder="Parking. Any kind."></div>
+        <div class="f"><label for="q-great">What do they think they're great at?</label><input id="q-great" name="great" autocomplete="off" placeholder="Karaoke. They are wrong."></div>
+        <div class="f wide"><label for="q-stupid">What's the stupidest thing they've ever done?</label><textarea id="q-stupid" name="stupid" rows="2" placeholder="Locked themselves out. Twice. Same day."></textarea></div>
+        <div class="f wide range"><label for="q-harsh">How harsh can we be? <output id="q-out">7</output>/10</label><input id="q-harsh" name="harsh" type="range" min="1" max="10" value="7"></div>
+      </div>
+    </fieldset>
+
+    <div class="tally" aria-live="polite">
+      <div><span class="eyebrow">Your order</span><p id="sum">The Little Shite. Loud and proud. Harshness 7 out of 10.</p></div>
+      <div class="pay"><b id="sum-price">{{PRICE_S}}</b><button class="btn" type="button" data-soon>Go to checkout</button></div>
+    </div>
+
+  </form>
+</main>
+
+{{FOOTER_PLAIN}}
+
+{{SOON}}
+
+<script>
+(function(){
+  var f=document.getElementById('order'),qs=document.getElementById('qs'),pot=document.getElementById('potluck'),rand=document.getElementById('rand'),random=false;
+  var q=new URLSearchParams(location.search);
+  ['box','outside'].forEach(function(n){var v=q.get(n),el=v&&f.querySelector('input[name="'+n+'"][value="'+v+'"]');if(el)el.checked=true});
+  function setRandom(on){random=on;pot.hidden=!on;qs.hidden=on;rand.setAttribute('aria-pressed',on);rand.hidden=on;update()}
+  rand.addEventListener('click',function(){setRandom(true)});
+  document.getElementById('unrand').addEventListener('click',function(){setRandom(false);document.getElementById('q-name').focus()});
+  function update(){
+    var b=f.querySelector('input[name=box]:checked'),o=f.querySelector('input[name=outside]:checked'),h=f.elements.harsh.value,n=f.elements.name.value.trim();
+    document.getElementById('q-out').textContent=h;
+    document.getElementById('sum').textContent=b.dataset.name+'. '+o.dataset.name+'. '+(random?'Pot luck.':(n?'For '+n+'. ':'')+'Harshness '+h+' out of 10.');
+    document.getElementById('sum-price').textContent=b.dataset.price;
+  }
+  f.addEventListener('input',update);f.addEventListener('change',update);f.addEventListener('submit',function(e){e.preventDefault()});update();
+})();
+</script>
+
+</body>
+</html>
