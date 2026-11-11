@@ -11,7 +11,9 @@ Six website directions for **Unlucky Dip**, home of **Shitebox** (a mystery box 
 | 5. Maison Shite (round two) | [maison/](https://ved9871.github.io/unlucky-dip/maison/) | [wtf](https://ved9871.github.io/unlucky-dip/maison/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/maison/small-print.html) |
 | 6. Bric-a-Brac (round two) | [bric/](https://ved9871.github.io/unlucky-dip/bric/) | [wtf](https://ved9871.github.io/unlucky-dip/bric/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/bric/small-print.html) |
 
-Gallery: https://ved9871.github.io/unlucky-dip/
+Gallery: https://unlucky-dip.prakashved155.workers.dev/ (Cloudflare, all six designs) and https://ved9871.github.io/unlucky-dip/ (GitHub Pages)
+
+To redeploy the Cloudflare copy after a change: `npx wrangler deploy` from this folder. `.assetsignore` keeps `_src`, the README and the git folder off the public site.
 
 ## The three directions
 
