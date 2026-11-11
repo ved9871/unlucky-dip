@@ -36,6 +36,10 @@ main{padding-block:2.5rem 4rem}
 .card li a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;border:2px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem}
 .card li:first-child a{background:var(--ink);color:#fff}
 .card li a:hover{background:var(--purple);border-color:var(--purple);color:#fff}
+.round{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:1.5rem;margin:2.5rem 0 .4rem}
+.round:first-child{margin-top:0}
+.roundnote{margin:0 0 1.25rem;max-width:46rem}
+.round + .grid{margin-top:1rem}
 .notes{margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 .notes h2{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:1.25rem;margin:0 0 .6rem}
 .notes ul{margin:0;padding-left:1.1rem}
@@ -48,11 +52,31 @@ footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;co
 <header>
   <div class="wrap">
     <div class="lockup"><img src="assets/brand/unlucky-dip-thumb.svg" alt="" width="128" height="118"><h1>UNLUCKY DIP</h1></div>
-    <p><strong>Three website directions for Unlucky Dip, home of Shitebox.</strong> Each one has a home page, a "WTF is Shitebox?" page and the small print. They share the same words, prices and logo, so the only thing to judge is the look. Design previews, 11 November 2026. Nothing is for sale yet.</p>
+    <p><strong>Six website directions for Unlucky Dip, home of Shitebox.</strong> Each one has a home page, a "WTF is Shitebox?" page and the small print. They share the same words, prices and logo, so the only thing to judge is the look. Design previews, 11 November 2026. Nothing is for sale yet.</p>
   </div>
 </header>
 <main>
   <div class="wrap">
+    <h2 class="round">Round two: three new worlds</h2>
+    <p class="roundnote">Built after the first three were judged too alike. Each takes its look from a different kind of site: a retro computer desktop, a luxury house, and the charity shop itself.</p>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/previews/os.webp" width="960" height="600" alt="Unlucky Dip 98 home page: a teal computer desktop with grey windows and an error pop-up">
+        <div class="t"><span class="tag new">New</span><h2>4. Unlucky Dip 98</h2><p>The site as an old computer desktop. Sections are windows, the menu is the taskbar, the 40% lives in the Recycle Bin and the small print is the blue error screen.</p>
+          <ul><li><a href="os/index.html">Home</a></li><li><a href="os/wtf.html">WTF is Shitebox?</a></li><li><a href="os/small-print.html">Small print</a></li></ul></div>
+      </article>
+      <article class="card">
+        <img src="assets/previews/maison.webp" width="960" height="600" alt="Maison Shite home page: a black box on a dark background with fine serif lettering">
+        <div class="t"><span class="tag new">New</span><h2>5. Maison Shite</h2><p>A luxury house with a completely straight face. Black box, fine serif type, roman numerals and a lot of space. Premium on the outside, shite on the inside, like the real box.</p>
+          <ul><li><a href="maison/index.html">Home</a></li><li><a href="maison/wtf.html">WTF is Shitebox?</a></li><li><a href="maison/small-print.html">Small print</a></li></ul></div>
+      </article>
+      <article class="card">
+        <img src="assets/previews/bric.webp" width="960" height="600" alt="Bric-a-Brac home page: paper labels taped to cardboard with price stickers and a polaroid">
+        <div class="t"><span class="tag new">New</span><h2>6. Bric-a-Brac</h2><p>The charity shop itself. Cardboard, masking tape, price-gun stickers, swing tags on a rail, a clipboard and a till receipt. The warmest of the six.</p>
+          <ul><li><a href="bric/index.html">Home</a></li><li><a href="bric/wtf.html">WTF is Shitebox?</a></li><li><a href="bric/small-print.html">Small print</a></li></ul></div>
+      </article>
+    </div>
+    <h2 class="round">Round one</h2>
     <div class="grid">
       <article class="card">
         <img src="assets/previews/rave.webp" width="1440" height="900" alt="Rave Flyer home page: yellow poster layout with a purple photo panel">
@@ -61,22 +85,23 @@ footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;co
       </article>
       <article class="card">
         <img src="assets/previews/dip.webp" width="1440" height="900" alt="Night Dip home page: dark teal fairground stall with a lucky-dip machine">
-        <div class="t"><span class="tag new">New</span><h2>2. Night Dip</h2><p>A lucky-dip stall after dark, in the teal, cyan and pink of Scott's new artwork. Press the Dip button in the hero. The boxes are raffle tickets and the shopping run is a till receipt.</p>
+        <div class="t"><span class="tag">Round one</span><h2>2. Night Dip</h2><p>A lucky-dip stall after dark, in the teal, cyan and pink of Scott's new artwork. Press the Dip button in the hero. The boxes are raffle tickets and the shopping run is a till receipt.</p>
           <ul><li><a href="dip/index.html">Home</a></li><li><a href="dip/wtf.html">WTF is Shitebox?</a></li><li><a href="dip/small-print.html">Small print</a></li></ul></div>
       </article>
       <article class="card">
         <img src="assets/previews/pop.webp" width="1440" height="900" alt="Pop Shite home page: pop-art comic panels in yellow, pink and teal">
-        <div class="t"><span class="tag new">New</span><h2>3. Pop Shite</h2><p>The site as a comic, to match the pop-art founder portraits. Sections are panels, narration sits in caption boxes, the boxes are comic covers and the founders get speech bubbles.</p>
+        <div class="t"><span class="tag">Round one</span><h2>3. Pop Shite</h2><p>The site as a comic, to match the pop-art founder portraits. Sections are panels, narration sits in caption boxes, the boxes are comic covers and the founders get speech bubbles.</p>
           <ul><li><a href="pop/index.html">Home</a></li><li><a href="pop/wtf.html">WTF is Shitebox?</a></li><li><a href="pop/small-print.html">Small print</a></li></ul></div>
       </article>
     </div>
     <div class="notes">
-      <div><h2>Same in all three</h2><ul>
+      <div><h2>Same in all six</h2><ul>
         <li>The thumbs-down logo in the four colours, always on white.</li>
         <li>"Don't know what to get them? Blame us." as the opening line.</li>
         <li>Two boxes on sale, a third shown as coming soon.</li>
         <li>An optional brief at the basket: who it's for, what they're shite at, how harsh out of 10, and incognito mode.</li>
         <li>An email sign-up, a "Got a box?" page for after opening, WhatsApp, FAQ.</li>
+        <li>Round two adds a free-box offer for creators and a note that more Unlucky Dip ranges are coming.</li>
       </ul></div>
       <div><h2>Still to decide</h2><ul>
         <li>Items per box. The pages say 3 to 4 and 5 to 7 until that is settled.</li>

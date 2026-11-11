@@ -12,7 +12,8 @@ import shutil
 
 SRC = pathlib.Path(__file__).parent
 ROOT = SRC.parent
-DESIGNS = {"rave": "Rave Flyer", "dip": "Night Dip", "pop": "Pop Shite"}
+DESIGNS = {"rave": "Rave Flyer", "dip": "Night Dip", "pop": "Pop Shite",
+           "os": "Unlucky Dip 98", "maison": "Maison Shite", "bric": "Bric-a-Brac"}
 
 CHARITIES = ["British Heart Foundation", "Mind", "YMCA", "Oxfam", "St Barnabas"]
 
@@ -158,6 +159,8 @@ TOKENS = {
 
 def build():
     for slug in DESIGNS:
+        if not (SRC / slug).is_dir():
+            continue
         out = ROOT / slug
         out.mkdir(exist_ok=True)
         for f in sorted((SRC / slug).iterdir()):

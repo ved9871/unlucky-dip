@@ -1,12 +1,15 @@
 # Unlucky Dip design previews
 
-Three website directions for **Unlucky Dip**, home of **Shitebox** (a mystery box of deliberately disappointing presents, around 40% of it rescued from charity shops). These are design previews for review. Nothing is for sale and no form stores anything yet.
+Six website directions for **Unlucky Dip**, home of **Shitebox** (a mystery box of deliberately disappointing presents, around 40% of it rescued from charity shops). These are design previews for review. Nothing is for sale and no form stores anything yet.
 
 | Design | Home | WTF is Shitebox? | Small print |
 | --- | --- | --- | --- |
 | 1. Rave Flyer (selected 6 Nov 2026) | [rave/](https://ved9871.github.io/unlucky-dip/rave/) | [wtf](https://ved9871.github.io/unlucky-dip/rave/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/rave/small-print.html) |
-| 2. Night Dip (new) | [dip/](https://ved9871.github.io/unlucky-dip/dip/) | [wtf](https://ved9871.github.io/unlucky-dip/dip/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/dip/small-print.html) |
-| 3. Pop Shite (new) | [pop/](https://ved9871.github.io/unlucky-dip/pop/) | [wtf](https://ved9871.github.io/unlucky-dip/pop/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/pop/small-print.html) |
+| 2. Night Dip | [dip/](https://ved9871.github.io/unlucky-dip/dip/) | [wtf](https://ved9871.github.io/unlucky-dip/dip/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/dip/small-print.html) |
+| 3. Pop Shite | [pop/](https://ved9871.github.io/unlucky-dip/pop/) | [wtf](https://ved9871.github.io/unlucky-dip/pop/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/pop/small-print.html) |
+| 4. Unlucky Dip 98 (round two) | [os/](https://ved9871.github.io/unlucky-dip/os/) | [wtf](https://ved9871.github.io/unlucky-dip/os/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/os/small-print.html) |
+| 5. Maison Shite (round two) | [maison/](https://ved9871.github.io/unlucky-dip/maison/) | [wtf](https://ved9871.github.io/unlucky-dip/maison/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/maison/small-print.html) |
+| 6. Bric-a-Brac (round two) | [bric/](https://ved9871.github.io/unlucky-dip/bric/) | [wtf](https://ved9871.github.io/unlucky-dip/bric/wtf.html) | [small print](https://ved9871.github.io/unlucky-dip/bric/small-print.html) |
 
 Gallery: https://ved9871.github.io/unlucky-dip/
 
@@ -15,6 +18,16 @@ Gallery: https://ved9871.github.io/unlucky-dip/
 1. **Rave Flyer.** A flyer pinned to a wall: hard grid, Anton headlines, yellow, pink, purple and lime. This is the design Scott chose over the pink one because it "needs to be abnormal".
 2. **Night Dip.** A lucky-dip stall at a fairground after dark, in the dark teal, cyan and pink of Scott's new background artwork. The hero is a tub you can dip into (press the button), the boxes are raffle tickets and the first shopping run is shown as a till receipt.
 3. **Pop Shite.** The site as a comic, matching the pop-art founder portraits. Sections are panels with gutters, narration sits in caption boxes, the boxes are comic covers with the price in the corner and the founders talk in speech bubbles.
+
+### Round two (11 Nov, after the first three were judged too alike)
+
+The second round takes each look from a different kind of real site, using the galleries listed in the `pengsonal/design-inspo` directory as the search space.
+
+4. **Unlucky Dip 98.** The site as an old computer desktop (the Poolsuite and Vacation Inc school). Sections are windows, the menu is the taskbar, the 40% lives in the Recycle Bin, the calm stretch is a Notepad file and the small print is the blue error screen.
+5. **Maison Shite.** A luxury house with a straight face: black box on a plinth, fine serif type, roman numerals, hairlines and space. It matches the real packaging plan, a premium black magnetic box with shite inside.
+6. **Bric-a-Brac.** The charity shop itself: cardboard, masking tape, price-gun stickers, swing tags on a rail, a clipboard and a till receipt.
+
+Round two also adds two pieces of content from the project notes: a free-box offer for creators, and a line that Shitebox is the first of several Unlucky Dip ranges.
 
 ## Feedback applied (Scott, 30 Oct to 11 Nov 2026)
 
@@ -48,8 +61,8 @@ Plain HTML and CSS, no framework. Words that must match across designs (FAQ, sma
 
 ```
 _src/build.py            shared copy and the build step
-_src/rave|dip|pop/       templates and stylesheet for each design
-rave/ dip/ pop/          built pages (what GitHub Pages serves)
+_src/<design>/           templates and stylesheet for each design
+rave/ dip/ pop/ os/ maison/ bric/   built pages (what GitHub Pages serves)
 assets/                  logo, founder portraits, backgrounds, certificate, previews
 index.html               gallery
 ```
