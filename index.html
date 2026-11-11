@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unlucky Dip design previews</title>
+<meta name="description" content="Three website directions for Unlucky Dip, home of Shitebox. Design previews for review, 11 November 2026.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/brand/unlucky-dip-thumb.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap">
+<style>
+/* The gallery stays plain white on purpose: the Unlucky Dip logo always sits on a clean white background (Scott, 10 Nov). */
+:root{--ink:#252525;--purple:#7845F5;--pink:#F12BA5;--yellow:#F8FF37;--lime:#A7F12B;--line:#e3e3e3}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.5}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:max(18px,env(safe-area-inset-left,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+header{padding-block:clamp(2.5rem,7vw,5rem) 2rem;border-bottom:1px solid var(--line)}
+.lockup{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.25rem);flex-wrap:wrap}
+.lockup img{width:clamp(72px,12vw,128px);height:auto}
+.lockup h1{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,8vw,5.5rem);line-height:.95;color:var(--purple);margin:0;letter-spacing:.01em}
+header p{max-width:46rem;margin:1.5rem 0 0;font-size:1.1rem}
+header p strong{font-weight:700}
+main{padding-block:2.5rem 4rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.card{border:2px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:#fff}
+.card img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:2px solid var(--ink)}
+.card .t{padding:1.25rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.tag{align-self:flex-start;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px;background:var(--yellow);border:2px solid var(--ink)}
+.tag.new{background:var(--lime)}
+.card h2{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:1.6rem;line-height:1.05;margin:0}
+.card p{margin:0;font-size:.98rem}
+.card ul{list-style:none;margin:auto 0 0;padding:.75rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.card li a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;border:2px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem}
+.card li:first-child a{background:var(--ink);color:#fff}
+.card li a:hover{background:var(--purple);border-color:var(--purple);color:#fff}
+.notes{margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.notes h2{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:1.25rem;margin:0 0 .6rem}
+.notes ul{margin:0;padding-left:1.1rem}
+.notes li{margin:.35rem 0}
+footer{border-top:1px solid var(--line);padding-block:1.5rem;font-size:.85rem;color:#555}
+@media (max-width:980px){.grid{grid-template-columns:1fr}.notes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="lockup"><img src="assets/brand/unlucky-dip-thumb.svg" alt="" width="128" height="118"><h1>UNLUCKY DIP</h1></div>
+    <p><strong>Three website directions for Unlucky Dip, home of Shitebox.</strong> Each one has a home page, a "WTF is Shitebox?" page and the small print. They share the same words, prices and logo, so the only thing to judge is the look. Design previews, 11 November 2026. Nothing is for sale yet.</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="grid">
+      <article class="card">
+        <img src="assets/previews/rave.webp" width="1440" height="900" alt="Rave Flyer home page: yellow poster layout with a purple photo panel">
+        <div class="t"><span class="tag">Selected on 6 November</span><h2>1. Rave Flyer</h2><p>The one Scott chose, with his changes applied: a calm stretch a third of the way down, founders off the home page, 40% at the top of the WTF page, and the small print in the footer.</p>
+          <ul><li><a href="rave/index.html">Home</a></li><li><a href="rave/wtf.html">WTF is Shitebox?</a></li><li><a href="rave/small-print.html">Small print</a></li></ul></div>
+      </article>
+      <article class="card">
+        <img src="assets/previews/dip.webp" width="1440" height="900" alt="Night Dip home page: dark teal fairground stall with a lucky-dip machine">
+        <div class="t"><span class="tag new">New</span><h2>2. Night Dip</h2><p>A lucky-dip stall after dark, in the teal, cyan and pink of Scott's new artwork. Press the Dip button in the hero. The boxes are raffle tickets and the shopping run is a till receipt.</p>
+          <ul><li><a href="dip/index.html">Home</a></li><li><a href="dip/wtf.html">WTF is Shitebox?</a></li><li><a href="dip/small-print.html">Small print</a></li></ul></div>
+      </article>
+      <article class="card">
+        <img src="assets/previews/pop.webp" width="1440" height="900" alt="Pop Shite home page: pop-art comic panels in yellow, pink and teal">
+        <div class="t"><span class="tag new">New</span><h2>3. Pop Shite</h2><p>The site as a comic, to match the pop-art founder portraits. Sections are panels, narration sits in caption boxes, the boxes are comic covers and the founders get speech bubbles.</p>
+          <ul><li><a href="pop/index.html">Home</a></li><li><a href="pop/wtf.html">WTF is Shitebox?</a></li><li><a href="pop/small-print.html">Small print</a></li></ul></div>
+      </article>
+    </div>
+    <div class="notes">
+      <div><h2>Same in all three</h2><ul>
+        <li>The thumbs-down logo in the four colours, always on white.</li>
+        <li>"Don't know what to get them? Blame us." as the opening line.</li>
+        <li>Two boxes on sale, a third shown as coming soon.</li>
+        <li>An optional brief at the basket: who it's for, what they're shite at, how harsh out of 10, and incognito mode.</li>
+        <li>An email sign-up, a "Got a box?" page for after opening, WhatsApp, FAQ.</li>
+      </ul></div>
+      <div><h2>Still to decide</h2><ul>
+        <li>Items per box. The pages say 3 to 4 and 5 to 7 until that is settled.</li>
+        <li>Whether delivery is inside the price. The pages say it is.</li>
+        <li>The two review quotes are marked as expected, not real. Swap in real ones before launch.</li>
+        <li>The sign-up, brief and box-number forms are mock-ups and do not store anything yet.</li>
+      </ul></div>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">Unlucky Dip design previews. Built from the notes and voice messages of 2 to 11 November 2026.</div></footer>
+</body>
+</html>

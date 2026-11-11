@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Unlucky Dip thumbs-down mark">
+<defs><clipPath id="thumb"><path d="M60 20 h50 a16 16 0 0 1 16 16 v70 l20 40 a14 14 0 0 1 -26 10 l-22 -34 v30 a16 16 0 0 1 -32 0 v-52 h-6 a12 12 0 0 1 -12 -12 v-56 a12 12 0 0 1 12 -12 z"/></clipPath></defs>
+<g clip-path="url(#thumb)">
+<rect x="0" y="0" width="100" height="100" fill="#7845F5"/><rect x="100" y="0" width="100" height="100" fill="#A7F12B"/>
+<rect x="0" y="100" width="100" height="100" fill="#F12BA5"/><rect x="100" y="100" width="100" height="100" fill="#F8FF37"/>
+</g>
+<path d="M60 20 h50 a16 16 0 0 1 16 16 v70 l20 40 a14 14 0 0 1 -26 10 l-22 -34 v30 a16 16 0 0 1 -32 0 v-52 h-6 a12 12 0 0 1 -12 -12 v-56 a12 12 0 0 1 12 -12 z" fill="none" stroke="#252525" stroke-width="8" stroke-linejoin="round"/>
+</svg>
