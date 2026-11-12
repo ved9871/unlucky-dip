@@ -52,7 +52,7 @@ Copy
 - Footer tape redrawn so it no longer cuts off, with torn ends and the unluckydip.com name.
 - Ninja Box: new section saying boxes are branded as standard and why you might hide one, "no extra cost", and a more mysterious box (lid open a crack, light leaking, eyes in a slot, blacked-out label).
 - Box Scan: Scott's new intro (full Shitebox experience, easter eggs) and "Then there's nothing to scan idiot…".
-- WTF page: the five charities are drawn as shop signs in our own lettering. **Their logos are not used.** Logos are trademarks and using them would suggest the charities back us, so each one needs to give permission first.
+- WTF page: the five charities show their own logos, set as shop signs (Ved, 12 Nov: use the logos directly). The files in `assets/charities/` come from each charity's own website. The line underneath still says they have not endorsed us.
 - A "Shitebox." wordmark sits on the hero picture as a stand-in until Scott's new picture arrives.
 
 ## Rules that still apply
@@ -65,7 +65,7 @@ Copy
 
 ## Before anything is sold
 
-- **Charity logos.** Ask each charity for written permission before using its logo.
+- **Charity logos.** They are on the WTF page without the charities having been asked. They are registered trademarks; if a charity objects, swap its logo for the name in `CHARITY_LOGOS` in `_src/build.py`.
 - **Cancelling.** The small print states the 14-day right to cancel, with the buyer paying return postage, and says personalised boxes cannot be cancelled once packing starts. Scott has agreed the wording; it has not been checked by anyone legal.
 - **Forms.** The sign-up, order and box-number forms are mock-ups.
 - `hello@unluckydip.com` and the WhatsApp number are placeholders.

@@ -21,6 +21,15 @@ BRAND = "unluckydip.com"
 # Scott, 11 Nov: 60%, measured by the value of what goes in a box (was 40%).
 PCT = "60%"
 CHARITIES = ["British Heart Foundation", "Mind", "YMCA", "Oxfam", "St Barnabas"]
+# Logos taken from each charity's own website on 12 Nov 2026 (Ved: use their logos directly).
+# (file in assets/charities, width, height)
+CHARITY_LOGOS = {
+    "British Heart Foundation": ("british-heart-foundation.svg", 124, 35),
+    "Mind": ("mind.png", 500, 216),
+    "YMCA": ("ymca.svg", 134, 39),
+    "Oxfam": ("oxfam.svg", 185, 70),
+    "St Barnabas": ("st-barnabas.svg", 189, 36),
+}
 EMAIL = "hello@unluckydip.com"
 
 PAGES = [  # (file, nav label)
@@ -186,7 +195,9 @@ TOKENS = {
     "FAQ": faq_html(),
     "SMALL_SHORT": SMALL_SHORT,
     "SMALL_FULL": small_full_html(),
-    "CHARITY_LI": "".join(f"<li>{c}</li>" for c in CHARITIES),
+    "CHARITY_LI": "".join(
+        f'<li><img src="../assets/charities/{CHARITY_LOGOS[c][0]}" width="{CHARITY_LOGOS[c][1]}" height="{CHARITY_LOGOS[c][2]}" loading="lazy" alt="{c}"></li>'
+        for c in CHARITIES),
     "SOON": SOON,
     "WA": WA,
     "BRAND": BRAND,

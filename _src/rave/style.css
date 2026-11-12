@@ -173,11 +173,10 @@ dialog.soon .x:hover{background:var(--ink);color:var(--yellow)}
 @media (max-width:860px){.wtf .wrap{grid-template-columns:1fr}}
 .charities{background:var(--lime)}
 .charities ul{list-style:none;margin:0;padding:1.5rem var(--gut) 2rem;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;border-top:var(--rule)}
-/* each charity as a shop sign: fascia with the name, awning stripes underneath. Our lettering, not their logos. */
-.charities li{position:relative;display:grid;place-items:center;min-height:6.5rem;padding:.9rem .6rem 1.7rem;border:var(--rule);background:var(--white);font-family:var(--poster);text-transform:uppercase;text-align:center;font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:1;min-width:0;overflow-wrap:anywhere;box-shadow:5px 5px 0 var(--ink)}
+/* each charity as a shop sign: its own logo on a white fascia with clear space round it, our awning underneath */
+.charities li{position:relative;display:grid;place-items:center;min-height:7.5rem;padding:1.1rem 1rem 2.1rem;border:var(--rule);background:var(--white);min-width:0;box-shadow:5px 5px 0 var(--ink)}
+.charities li img{display:block;width:auto;height:auto;max-width:100%;max-height:3.4rem;object-fit:contain}
 .charities li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.05rem;border-top:var(--rule);background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--yellow) 14px 28px)}
-.charities li:nth-child(2n)::after{background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--pink) 14px 28px)}
-.charities li:nth-child(3n)::after{background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--purple) 14px 28px)}
 .charities .note{padding:1rem var(--gut);border-top:var(--rule);font-weight:700;background:var(--white);text-align:center}
 @media (max-width:900px){.charities ul{grid-template-columns:1fr 1fr}.charities li:last-child{grid-column:1/-1}}
 .steps{background:var(--purple);color:var(--white)}
