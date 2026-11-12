@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <title>Ninja Box. unluckydip.com</title>
-<meta name="description" content="Ninja Box: a Shitebox in a plain box, with nothing on the outside to give it away. Don't let them know what shite they're about to get.">
+<meta name="description" content="Ninja Box: a Shitebox in a plain box, with nothing on the outside to give it away, at no extra cost. Don't let them know what shite they're about to get.">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
@@ -19,26 +19,70 @@
   <div class="wrap">
     <p class="eyebrow">Nobody sees it coming</p>
     <h1>Ninja Box.</h1>
-    <svg class="nj-box" viewBox="0 0 400 350" role="img" aria-label="A plain black box with a pair of eyes looking out of it">
-      <ellipse cx="200" cy="330" rx="176" ry="13" fill="#000" opacity=".5"/>
-      <polygon points="40,120 120,58 360,58 280,120" fill="#1f1f1f"/>
-      <polygon points="280,120 360,58 360,258 280,320" fill="#050505"/>
-      <rect x="40" y="120" width="240" height="200" fill="#0d0d0d"/>
-      <polygon points="148,120 228,58 252,58 172,120" fill="#333"/>
-      <rect x="148" y="120" width="24" height="40" fill="#333"/>
-      <path d="M40 120 120 58H360V258L280 320H40ZM40 120H280V320M280 120 360 58" fill="none" stroke="#7845F5" stroke-width="3" stroke-linejoin="round"/>
-      <rect x="66" y="196" width="188" height="50" rx="25" fill="#2b2b2b"/>
-      <g class="eyes">
-        <path d="M92 224q24-22 50-6q-24 20-50 6z" fill="#fff"/>
-        <path d="M178 218q26-16 50 6q-26 14-50-6z" fill="#fff"/>
-        <circle class="pupil" cx="122" cy="221" r="7.5" fill="#0d0d0d"/>
-        <circle class="pupil" cx="200" cy="221" r="7.5" fill="#0d0d0d"/>
+    <svg class="nj-box" viewBox="0 0 440 400" role="img" aria-label="A plain black box in a spotlight. The lid is open a crack, light is leaking out, and a pair of eyes is watching from a slot in the front. The address label is blacked out.">
+      <defs>
+        <radialGradient id="nj-halo"><stop offset="0" stop-color="#7845F5" stop-opacity=".6"/><stop offset=".55" stop-color="#7845F5" stop-opacity=".16"/><stop offset="1" stop-color="#7845F5" stop-opacity="0"/></radialGradient>
+        <linearGradient id="nj-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        <linearGradient id="nj-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#191919"/><stop offset="1" stop-color="#040404"/></linearGradient>
+        <linearGradient id="nj-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#161616"/></linearGradient>
+        <filter id="nj-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+        <filter id="nj-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <polygon points="178,0 262,0 420,372 20,372" fill="url(#nj-beam)"/>
+      <circle cx="220" cy="232" r="205" fill="url(#nj-halo)"/>
+      <ellipse cx="222" cy="372" rx="186" ry="14" fill="#000" opacity=".6"/>
+      <g class="q" font-family="Anton, Impact, sans-serif" fill="#b9a2ff">
+        <text x="34" y="150" font-size="54" opacity=".5">?</text>
+        <text x="378" y="212" font-size="38" opacity=".38">?</text>
+        <text x="340" y="150" font-size="28" opacity=".3">?</text>
+      </g>
+      <!-- the box -->
+      <polygon points="300,160 380,98 380,298 300,360" fill="#030303"/>
+      <rect x="60" y="160" width="240" height="200" fill="url(#nj-front)"/>
+      <!-- the lid, lifted a crack, with light getting out -->
+      <polygon points="60,160 300,160 380,98 384,78 138,78 56,144" fill="#000"/>
+      <polygon points="56,144 138,78 384,78 302,144" fill="url(#nj-top)"/>
+      <polygon points="146,144 228,78 254,78 172,144" fill="#4a4a4a"/>
+      <path d="M56 144 138 78H384L302 144Z M60 160V360H300L380 298V98 M300 160V360" fill="none" stroke="#7845F5" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
+      <g class="leak">
+        <path d="M64 153H300L379 90" fill="none" stroke="#A7F12B" stroke-width="16" stroke-linecap="round" filter="url(#nj-blur)"/>
+        <path d="M64 153H300L379 90" fill="none" stroke="#A7F12B" stroke-width="5" stroke-linecap="round" filter="url(#nj-glow)"/>
+        <path d="M64 153H300L379 90" fill="none" stroke="#f4ffd9" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <!-- someone is in there -->
+      <rect x="104" y="226" width="152" height="34" rx="5" fill="#000" stroke="#2c2c2c" stroke-width="2"/>
+      <g class="eyes" filter="url(#nj-glow)">
+        <path d="M124 245q19-15 40-3q-19 13-40 3z" fill="#eaffc4"/>
+        <path d="M196 242q21-12 40 3q-21 10-40-3z" fill="#eaffc4"/>
+        <circle class="pupil" cx="147" cy="243" r="5.5" fill="#050505"/>
+        <circle class="pupil" cx="213" cy="243" r="5.5" fill="#050505"/>
+      </g>
+      <!-- the label gives nothing away -->
+      <g transform="rotate(-3 120 318)">
+        <rect x="78" y="296" width="104" height="46" fill="#ece8fa"/>
+        <rect x="86" y="305" width="26" height="7" fill="#8a84a8"/><rect x="118" y="304" width="56" height="9" fill="#050505"/>
+        <rect x="86" y="321" width="26" height="7" fill="#8a84a8"/><rect x="118" y="320" width="44" height="9" fill="#050505"/>
+      </g>
+      <g class="smoke" fill="none" stroke="#fff" stroke-linecap="round" filter="url(#nj-blur)" opacity=".2">
+        <path d="M24 356q60-26 112-6t104-10"/><path d="M250 366q54-20 96-6t70-14"/>
       </g>
     </svg>
     <p class="line">Don't let them know what shite they're about to get.</p>
     <div class="ctas"><a class="btn" href="order.html?outside=ninja">Make mine a Ninja Box</a><a class="btn ghost" href="index.html#boxes">See the boxes</a></div>
+    <p class="free">No extra cost. Same shite. Fewer clues.</p>
   </div>
 </header>
+
+<section class="nj-why">
+  <div class="wrap">
+    <h2>Why hide a Shitebox?</h2>
+    <div>
+      <p>Our boxes come branded as standard. And we don't want to brag, but for the growing number of people who've heard of Shitebox, that means they know exactly what they're about to receive the second you hand it over.</p>
+      <p>For plenty of situations that works great. The dread is half the present.</p>
+      <p class="but">But sometimes it's better to give them shite more secretly.</p>
+    </div>
+  </div>
+</section>
 
 <section class="nj-pick" aria-labelledby="nj-q">
   <div class="wrap"><h2 id="nj-q">Do you want them to know it's a Shitebox?</h2></div>
@@ -46,32 +90,32 @@
     <article class="loud">
       <p class="eyebrow">Yes. Let them worry.</p>
       <h3>Loud and proud</h3>
-      <p>Our name all over the outside. They know what it is the second it lands, and the dread is part of the present.</p>
+      <p>The standard box, with our name all over the outside. They know what it is the second it lands.</p>
     </article>
     <article class="quiet">
       <p class="eyebrow">No. Not a word.</p>
       <h3>Ninja Box</h3>
-      <p>A plain box. No name, no slogans, no clue. It looks like any other parcel, right up until it's open. Same shite inside.</p>
+      <p>A plain box. No name, no slogans, no clue. It looks like any other parcel, right up until it's open. Same shite inside, same price.</p>
     </article>
   </div>
 </section>
 
 <section class="nj-next">
   <div class="wrap">
-    <p>You choose which when you order. It takes one click.</p>
+    <p>You choose which when you order. One click, no extra cost.</p>
     <a class="btn" href="order.html?outside=ninja">Make mine a Ninja Box</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div><a class="wordmark" href="index.html">unluckydip.com<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside"></div>
+    <div><a class="wordmark" href="index.html">unluckydip.com<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
     <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:hello@unluckydip.com">hello@unluckydip.com</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
   </div>
   
-  <div class="wrap legal">Shitebox is a product of unluckydip.com. Design preview, 11 November 2026. Nothing is for sale yet and the prices are working numbers.</div>
+  <div class="wrap legal">Shitebox is a product of unluckydip.com. Design preview, 12 November 2026. Nothing is for sale yet and the prices are working numbers.</div>
 </footer>
 
 <dialog class="soon" id="soon" aria-labelledby="soon-h">

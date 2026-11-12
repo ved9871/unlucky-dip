@@ -30,24 +30,25 @@ PAGES = [  # (file, nav label)
     ("wtf.html", "WTF is Shitebox?"),
 ]
 
+# Order set by Scott, 12 Nov: upcycled first, what's inside second, personal third, then the rest.
 FAQ = [
-    ("What is inside?",
-     "Stuff. Mostly. Some upcycled shite, some mundane shite and some novelty shite. Random, low-value goods. "
-     "You are paying for the laugh, and we say so before you pay."),
     ("What do you mean, upcycled?",
      f"Around {PCT} of what goes in a box is rescued from charity shops and given one more chance to disappoint. "
      "So yes, some items have had a previous life. Nothing that could be a hygiene risk is ever second-hand."),
-    ("I don't know what to get someone.",
-     "Then stop. That's the whole idea. You pick a size, we take the decision, and they get what they're given. "
-     "If it's rubbish, tell them to blame us."),
-    ("What is a Ninja Box?",
-     "The same shite in a plain box, with our name nowhere on the outside. They won't know what it is until it's open. "
-     "<a href=\"ninja.html\">Meet the Ninja Box</a>."),
+    ("What is inside?",
+     "Stuff. Mostly. Some upcycled shite, some mundane shite and some novelty shite. Random, low-value goods. "
+     "You are paying for the laugh, and we say so before you pay."),
     ("Can I make it personal?",
      "Yes. When you order we ask who it's for, what they're shite at and how harsh we can be, and we aim the insults. "
      "Or hit Randomise and take pot luck."),
+    ("I'm out of gift ideas.",
+     "Good. Stop having them. Gift ideas are how you ended up buying your dad socks again. You pick a size, we take the decision, "
+     "and they get what they're given. If it's rubbish, just blame us."),
+    ("What is a Ninja Box?",
+     "The same shite in a plain box, with our name nowhere on the outside, at no extra cost. They won't know what it is until it's open. "
+     "<a href=\"ninja.html\">Meet the Ninja Box</a>."),
     ("What is Box Scan?",
-     "Every box has something on it to scan. Scan it once the box is open and we explain ourselves, item by item. "
+     "Every box has a place to scan. Scan it once the box is open and we explain ourselves, item by item. "
      "<a href=\"scan.html\">Box Scan is here</a>."),
     ("Which charities?",
      "We shop at British Heart Foundation, Mind, YMCA, Oxfam and St Barnabas, and we're adding more. We buy from their shops like anyone else. "
@@ -77,8 +78,11 @@ SMALL_FULL = [
      ["We buy stock from charity shops, including British Heart Foundation, Mind, YMCA, Oxfam and St Barnabas. "
       "The money we spend in their shops is how your order supports them.",
       "We are not partnered with these charities and they have not endorsed us. We do not promise a fixed donation per box."]),
+    ("Postage",
+     ["UK postage is £4.70 a box, sent Royal Mail tracked, and is added to the price at the checkout."]),
     ("Ninja Box",
-     ["A Ninja Box is sent in a plain box with no Shitebox or unluckydip.com branding on the outside. The contents are the same."]),
+     ["Boxes are branded on the outside as standard. A Ninja Box is sent in a plain box with no Shitebox or unluckydip.com branding on the outside. "
+      "The contents are the same and it costs no more."]),
     ("Making it personal",
      ["Telling us about the person getting the box is optional. We use what you tell us to write the jokes for that box, "
       "and for nothing else."]),
@@ -116,7 +120,7 @@ def footer(short=True):
     small = f'<div class="wrap small">{SMALL_SHORT}</div>' if short else ""
     return f"""<footer>
   <div class="wrap">
-    <div><a class="wordmark" href="index.html">{BRAND}<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside"></div>
+    <div><a class="wordmark" href="index.html">{BRAND}<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
     <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:{EMAIL}">{EMAIL}</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
@@ -138,7 +142,7 @@ def small_full_html():
     return "\n    ".join(out)
 
 
-PREVIEW = "Design preview, 11 November 2026. Nothing is for sale yet and the prices are working numbers."
+PREVIEW = "Design preview, 12 November 2026. Nothing is for sale yet and the prices are working numbers."
 
 # Scott, 11 Nov: "Not on sale yet" is no longer a section. It pops up when someone tries to buy.
 SOON = """<dialog class="soon" id="soon" aria-labelledby="soon-h">
@@ -187,7 +191,8 @@ TOKENS = {
     "WA": WA,
     "BRAND": BRAND,
     "PCT": PCT,
-    # Postage (£4.70, Royal Mail Tracked 48) is added at checkout and is not part of these prices (Scott, 11 Nov).
+    # Postage is on top of these prices and shown beside them (Scott, 12 Nov: "yes, add £4.70 postage").
+    "POST": "£4.70",
     "PRICE_S": "£18.99",
     "PRICE_B": "£27.99",
     "EMAIL": EMAIL,

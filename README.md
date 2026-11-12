@@ -2,7 +2,7 @@
 
 Website for **unluckydip.com**, home of **Shitebox**: a mystery box of deliberately disappointing presents, around 60% of it upcycled from charity shops. This is a design preview. Nothing is for sale and no form stores anything yet.
 
-**Rave Flyer is the chosen design** (Scott, 11 Nov 2026). Version 4 in `rave/` has his review applied. The other five designs are kept as they were for reference.
+**Rave Flyer is the chosen design** (Scott, 11 Nov 2026). Version 5 in `rave/` has his reviews of 11 and 12 Nov applied. The other five designs are kept as they were for reference.
 
 Preview: https://unlucky-dip.prakashved155.workers.dev/
 
@@ -44,6 +44,17 @@ Copy
 - 40% is now 60%.
 - "Upcycled" and "We're nifty at being thrifty!" run through the pages.
 
+## What version 5 changed (Scott's review of version 4, 12 Nov 2026)
+
+- Prices show "+ £4.70 postage" beside them on the home and order pages. Scott confirmed the 14-day wording, and that a Ninja Box costs no extra.
+- The Absolute Shite is "£???", the ticker says "Just blame us", and the Ninja Box banner reads "Want to make the shite more of a surprise? Make it a Ninja Box".
+- FAQ order: upcycled, what's inside, make it personal, then the rest. One question uses "gift ideas".
+- Footer tape redrawn so it no longer cuts off, with torn ends and the unluckydip.com name.
+- Ninja Box: new section saying boxes are branded as standard and why you might hide one, "no extra cost", and a more mysterious box (lid open a crack, light leaking, eyes in a slot, blacked-out label).
+- Box Scan: Scott's new intro (full Shitebox experience, easter eggs) and "Then there's nothing to scan idiot…".
+- WTF page: the five charities are drawn as shop signs in our own lettering. **Their logos are not used.** Logos are trademarks and using them would suggest the charities back us, so each one needs to give permission first.
+- A "Shitebox." wordmark sits on the hero picture as a stand-in until Scott's new picture arrives.
+
 ## Rules that still apply
 
 - Logo: the thumbs-down in the four colours, always on white.
@@ -54,8 +65,8 @@ Copy
 
 ## Before anything is sold
 
-- **Postage.** UK pricing rules expect a compulsory delivery charge to be shown with the price, not first revealed at the checkout. Decide how to show the £4.70 before launch.
-- **Cancelling.** Online orders carry a 14-day right to cancel that a mystery box does not escape. The small print states it, with the buyer paying return postage, and says personalised boxes cannot be cancelled once packing starts. Have that wording checked.
+- **Charity logos.** Ask each charity for written permission before using its logo.
+- **Cancelling.** The small print states the 14-day right to cancel, with the buyer paying return postage, and says personalised boxes cannot be cancelled once packing starts. Scott has agreed the wording; it has not been checked by anyone legal.
 - **Forms.** The sign-up, order and box-number forms are mock-ups.
 - `hello@unluckydip.com` and the WhatsApp number are placeholders.
 

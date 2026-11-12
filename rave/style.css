@@ -52,6 +52,9 @@ nav.main .wrap{display:flex;align-items:stretch;justify-content:space-between;ga
 .poster picture{display:block;position:absolute;inset:0}
 .poster img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
 .poster .burst{position:absolute;right:-30px;top:-30px;z-index:1;width:176px;height:176px;background:var(--lime);clip-path:polygon(50% 0,61% 20%,83% 10%,80% 33%,100% 45%,82% 58%,90% 80%,67% 78%,58% 100%,45% 82%,22% 90%,27% 67%,5% 58%,22% 45%,8% 24%,32% 27%,38% 5%);display:grid;place-items:center;color:var(--ink);font-family:var(--poster);text-transform:uppercase;font-size:1.15rem;line-height:1;text-align:center;transform:rotate(12deg);padding:2.6rem 2.4rem 2.2rem}
+.poster .burst small{display:block;font-family:var(--body);font-weight:900;font-size:.62rem;letter-spacing:.08em;margin-top:.15rem}
+/* stand-in Shitebox wordmark until Scott's new hero picture arrives (12 Nov) */
+.poster .sb-mark{position:absolute;left:1rem;top:.8rem;z-index:1;font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.9rem);line-height:1;text-transform:uppercase;color:var(--yellow);text-shadow:.06em .06em 0 var(--ink)}
 .strip{display:grid;grid-template-columns:repeat(3,1fr)}
 .strip div{padding:.85rem 1rem;border-right:var(--rule);font-weight:900;text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;background:var(--white);min-width:0}
 .strip div:last-child{border-right:0}
@@ -80,6 +83,7 @@ section{border-bottom:var(--rule)}
 .tier h3{font-size:2.4rem}
 .tier .size{font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;margin-top:.35rem}
 .tier .price{font-family:var(--poster);font-size:4rem;line-height:1}
+.tier .price small{display:block;font-family:var(--body);font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.35rem}
 .tier ul{margin:0;padding-left:1.1rem;font-weight:600;font-size:.95rem}
 .tier .btn{margin-top:auto;background:var(--ink);color:var(--yellow);border-color:var(--ink)}
 .tier.big .btn,.tier.abs .btn{background:var(--yellow);color:var(--ink)}
@@ -124,7 +128,7 @@ footer ul{list-style:none;margin:0;padding:0}
 footer li{margin:.4rem 0}
 footer a{color:#fff;text-decoration:none}
 footer a:hover{color:var(--lime)}
-footer .tape{margin-top:1rem;width:min(100%,420px)}
+footer .tape{margin-top:1rem;width:min(100%,440px);height:auto}
 footer .wordmark{font-family:var(--display);font-size:1.5rem;color:var(--pink);text-decoration:none;display:block}
 footer .wordmark small{display:block;font-family:var(--body);font-weight:900;font-size:.62rem;letter-spacing:.16em;color:var(--yellow);text-transform:uppercase;margin-top:.2rem}
 footer .wrap.small{display:block;border-top:1px solid #444;padding-block:1.5rem;font-size:.82rem;color:#bbb}
@@ -168,12 +172,14 @@ dialog.soon .x:hover{background:var(--ink);color:var(--yellow)}
 .wtf p.big{font-family:var(--display);font-size:1.5rem;line-height:1.15;text-transform:uppercase}
 @media (max-width:860px){.wtf .wrap{grid-template-columns:1fr}}
 .charities{background:var(--lime)}
-.charities ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-top:var(--rule)}
-.charities li{border-right:var(--rule);padding:1.5rem 1rem;font-family:var(--poster);text-transform:uppercase;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1;min-width:0;background:var(--white);overflow-wrap:anywhere}
-.charities li:last-child{border-right:0}
-.charities li:nth-child(odd){background:var(--yellow)}
+.charities ul{list-style:none;margin:0;padding:1.5rem var(--gut) 2rem;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;border-top:var(--rule)}
+/* each charity as a shop sign: fascia with the name, awning stripes underneath. Our lettering, not their logos. */
+.charities li{position:relative;display:grid;place-items:center;min-height:6.5rem;padding:.9rem .6rem 1.7rem;border:var(--rule);background:var(--white);font-family:var(--poster);text-transform:uppercase;text-align:center;font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:1;min-width:0;overflow-wrap:anywhere;box-shadow:5px 5px 0 var(--ink)}
+.charities li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.05rem;border-top:var(--rule);background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--yellow) 14px 28px)}
+.charities li:nth-child(2n)::after{background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--pink) 14px 28px)}
+.charities li:nth-child(3n)::after{background:repeating-linear-gradient(90deg,var(--ink) 0 14px,var(--purple) 14px 28px)}
 .charities .note{padding:1rem var(--gut);border-top:var(--rule);font-weight:700;background:var(--white);text-align:center}
-@media (max-width:900px){.charities ul{grid-template-columns:1fr 1fr}.charities li{border-bottom:var(--rule)}.charities li:nth-child(2n){border-right:0}.charities li:last-child{grid-column:1/-1;border-bottom:0}}
+@media (max-width:900px){.charities ul{grid-template-columns:1fr 1fr}.charities li:last-child{grid-column:1/-1}}
 .steps{background:var(--purple);color:var(--white)}
 .steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--rule);counter-reset:s}
 .steps li{padding:1.75rem;border-right:var(--rule);min-width:0;counter-increment:s}
@@ -220,12 +226,29 @@ body.ninja{--night:#150A38;background:var(--night);color:#f4f2ff;--rule:4px soli
 .nj-hero .wrap{padding-block:clamp(2.5rem,6vw,4.5rem)}
 .nj-hero .eyebrow{color:var(--lime)}
 .nj-hero h1{font-size:clamp(4.4rem,17vw,12rem);line-height:.84;color:#fff}
-.nj-box{display:block;width:min(74vw,360px);height:auto;margin:clamp(-2.2rem,-3vw,-1rem) auto 0;position:relative}
+.nj-box{display:block;width:min(86vw,440px);height:auto;margin:clamp(-2.4rem,-3vw,-1rem) auto 0;position:relative;overflow:visible}
 .nj-box .pupil{animation:glance 7s ease-in-out infinite}
-@keyframes glance{0%,38%,100%{transform:translateX(0)}44%,62%{transform:translateX(9px)}70%,88%{transform:translateX(-9px)}}
-@media (prefers-reduced-motion:reduce){.nj-box .pupil{animation:none}}
+.nj-box .eyes{transform-box:fill-box;transform-origin:center;animation:blink 5.5s linear infinite}
+.nj-box .leak{animation:leak 4s ease-in-out infinite alternate}
+.nj-box .q text{animation:drift 6s ease-in-out infinite alternate}
+.nj-box .q text:nth-child(2){animation-duration:8s;animation-delay:-3s}
+.nj-box .q text:nth-child(3){animation-duration:7s;animation-delay:-5s}
+.nj-box .smoke{animation:smoke 9s ease-in-out infinite alternate}
+@keyframes glance{0%,38%,100%{transform:translateX(0)}44%,62%{transform:translateX(7px)}70%,88%{transform:translateX(-7px)}}
+@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.08)}}
+@keyframes leak{from{opacity:.45}to{opacity:1}}
+@keyframes drift{from{transform:translateY(6px)}to{transform:translateY(-10px)}}
+@keyframes smoke{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@media (prefers-reduced-motion:reduce){.nj-box *{animation:none!important}}
 .nj-hero .line{font-family:var(--poster);text-transform:uppercase;font-size:clamp(1.6rem,4.2vw,3rem);line-height:1;color:var(--yellow);max-width:22ch;margin:1.5rem auto 1.5rem;text-wrap:balance}
 .nj-hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.nj-hero .free{margin:1.1rem 0 0;font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--lime)}
+.nj-why{background:#0b0b0b}
+.nj-why .wrap{display:grid;grid-template-columns:5fr 7fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;padding-block:3.25rem}
+.nj-why h2{font-size:clamp(2.4rem,5.6vw,4.4rem);color:#fff}
+.nj-why p{margin:0 0 1rem;font-size:1.12rem;font-weight:500;color:#dcd8ee;max-width:38rem}
+.nj-why p.but{font-family:var(--poster);text-transform:uppercase;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.05;color:var(--lime);margin:1.4rem 0 0}
+@media (max-width:860px){.nj-why .wrap{grid-template-columns:1fr}}
 .nj-pick h2{font-size:clamp(2.2rem,5.6vw,4.2rem);padding-block:2.25rem 1.75rem;max-width:18ch}
 .nj-pick .two{display:grid;grid-template-columns:1fr 1fr;border-top:var(--rule)}
 .nj-pick article{padding:2rem var(--gut);min-width:0}
@@ -289,6 +312,8 @@ body.ninja{--night:#150A38;background:var(--night);color:#f4f2ff;--rule:4px soli
 .tally .eyebrow{color:var(--lime);margin:0 0 .2rem;display:block}
 .tally p{margin:0;font-weight:700}
 .tally .pay{display:flex;align-items:center;gap:1rem}
+.tally .amt{display:grid;justify-items:end}
+.tally .amt small{font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#ddd}
 .tally .pay b{font-family:var(--poster);font-weight:400;font-size:2.4rem;line-height:1;color:var(--yellow)}
 .tally .btn{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
 .tally .btn:hover{background:var(--pink);border-color:var(--pink);color:#fff}
@@ -298,6 +323,7 @@ body.ninja{--night:#150A38;background:var(--night);color:#f4f2ff;--rule:4px soli
 .scan-hero .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(1.5rem,5vw,4rem);align-items:center;padding-block:clamp(2.5rem,6vw,4.5rem)}
 .scan-hero h1{font-size:clamp(4.4rem,15vw,11rem);line-height:.84}
 .scan-hero .lede{max-width:36rem;font-size:1.2rem;font-weight:700;margin:1.5rem 0 0}
+.scan-hero .lede.two{font-size:1.05rem;font-weight:600;margin-top:.8rem}
 /* a viewfinder, not a picture of anything in the box: where the thing to scan lives stays a surprise */
 .scanner{position:relative;width:clamp(170px,24vw,280px);aspect-ratio:1;background:
   linear-gradient(var(--ink),var(--ink)) 0 0/26% 5% no-repeat,linear-gradient(var(--ink),var(--ink)) 0 0/5% 26% no-repeat,
@@ -320,4 +346,5 @@ body.ninja{--night:#150A38;background:var(--night);color:#f4f2ff;--rule:4px soli
 .scan-form .result{margin:1rem 0 0;font-weight:800;background:var(--yellow);border:3px solid var(--ink);padding:.7rem .9rem;max-width:44rem}
 .nobox{border:var(--rule);padding:1.5rem;box-shadow:8px 8px 0 var(--ink);background:var(--lime)}
 .nobox h3{font-size:2rem;margin-bottom:.6rem}
+.nobox .idiot{font-family:var(--display);font-size:1.25rem;line-height:1.15;margin:0 0 .9rem}
 @media (max-width:860px){.scan-form .wrap{grid-template-columns:1fr}}

@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" role="img" aria-label="Unlucky Dip parcel tape">
-<rect width="1200" height="120" fill="#F8FF37"/>
-<g font-family="Archivo Black, Impact, Arial Black, sans-serif" font-size="46" fill="#252525">
-<text x="40" y="76">UNLUCKY DIP</text><text x="440" y="76">BEWARE: CRAP INSIDE</text><text x="1000" y="76">UNLUCKY DIP</text></g>
-<g transform="translate(360 18) scale(.42)"><use href="#t"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" role="img" aria-label="unluckydip.com parcel tape: beware, crap inside">
+<!-- Parcel tape with torn ends. textLength pins each line to a fixed width, so nothing is cut off whichever font the browser falls back to. -->
+<path d="M14 0H1186L1200 15 1186 30 1200 45 1186 60 1200 75 1186 90 1200 105 1186 120H14L0 105 14 90 0 75 14 60 0 45 14 30 0 15Z" fill="#F8FF37"/>
 <defs><g id="t"><path d="M60 20 h50 a16 16 0 0 1 16 16 v70 l20 40 a14 14 0 0 1 -26 10 l-22 -34 v30 a16 16 0 0 1 -32 0 v-52 h-6 a12 12 0 0 1 -12 -12 v-56 a12 12 0 0 1 12 -12 z" fill="#F12BA5" stroke="#252525" stroke-width="10" stroke-linejoin="round"/></g></defs>
-<g transform="translate(920 18) scale(.42)"><use href="#t"/></g>
+<g font-family="Archivo Black, Impact, Arial Black, sans-serif" font-size="46" fill="#252525">
+<text x="120" y="76" textLength="500" lengthAdjust="spacingAndGlyphs">BEWARE: CRAP INSIDE</text>
+<text x="742" y="76" textLength="400" lengthAdjust="spacingAndGlyphs">UNLUCKYDIP.COM</text></g>
+<g transform="translate(34 18) scale(.42)"><use href="#t"/></g>
+<g transform="translate(656 18) scale(.42)"><use href="#t"/></g>
 </svg>
