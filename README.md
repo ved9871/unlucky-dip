@@ -2,7 +2,7 @@
 
 Website for **unluckydip.com**, home of **Shitebox**: a mystery box of deliberately disappointing presents, around 60% of it upcycled from charity shops. This is a design preview. Nothing is for sale and no form stores anything yet.
 
-**Rave Flyer is the chosen design** (Scott, 11 Nov 2026). Version 5 in `rave/` has his reviews of 11 and 12 Nov applied. The other five designs are kept as they were for reference.
+**Rave Flyer is the chosen design** (Scott, 11 Nov 2026). Version 6 in `rave/` has his reviews of 11, 12, 13 and 14 Nov applied. The other five designs are kept as they were for reference.
 
 Preview: https://unlucky-dip.prakashved155.workers.dev/
 
@@ -12,7 +12,10 @@ Preview: https://unlucky-dip.prakashved155.workers.dev/
 | Order ("Set the trap") | [rave/order](https://unlucky-dip.prakashved155.workers.dev/rave/order) |
 | Ninja Box | [rave/ninja](https://unlucky-dip.prakashved155.workers.dev/rave/ninja) |
 | Box Scan | [rave/scan](https://unlucky-dip.prakashved155.workers.dev/rave/scan) |
-| Not So Shite (merch and partner picks) | [rave/not-so-shite](https://unlucky-dip.prakashved155.workers.dev/rave/not-so-shite) |
+| Not So Shite (other shops' products) | [rave/not-so-shite](https://unlucky-dip.prakashved155.workers.dev/rave/not-so-shite) |
+| A Not So Shite product page | [rave/nss-very-loud-pants](https://unlucky-dip.prakashved155.workers.dev/rave/nss-very-loud-pants) |
+| Wear Shite (our merch) | [rave/wear-shite](https://unlucky-dip.prakashved155.workers.dev/rave/wear-shite) |
+| After the scan: your box | [rave/your-box](https://unlucky-dip.prakashved155.workers.dev/rave/your-box) |
 | WTF is Shitebox? | [rave/wtf](https://unlucky-dip.prakashved155.workers.dev/rave/wtf) |
 | Small print | [rave/small-print](https://unlucky-dip.prakashved155.workers.dev/rave/small-print) |
 
@@ -56,14 +59,21 @@ Copy
 - WTF page: the five charities show their own logos, set as shop signs (Ved, 12 Nov: use the logos directly). The files in `assets/charities/` come from each charity's own website. The line underneath still says they have not endorsed us.
 - A "Shitebox." wordmark sits on the hero picture as a stand-in until Scott's new picture arrives.
 
-## Added 14 November 2026: Not So Shite
+## What version 6 changed (14 November 2026)
 
-- `not-so-shite.html` is the merch and partner section (Ved, 14 Nov). It is the fifth menu link, so the menu drops to its own row below 1080px.
-- Products are a list in `_src/build.py` (`PRODUCTS`). Each is either `merch` (sold by us, sent by a supplier: drop shipping or print on demand) or `partner` (an affiliate link out to another shop).
-- The twelve products are **examples** with drawn pictures. The real products, suppliers and affiliate partners are not chosen.
-- Partner cards carry "Affiliate link. We may earn a commission." and the links use `rel="sponsored nofollow"`. UK advertising rules need affiliate links to be labelled, so keep that when the real ones go in.
-- The small print gained a "Not So Shite" section explaining both kinds. That wording was written for the preview and has not been checked legally.
-- Scott's feedback from the meetings of 13 and 14 November is **not** applied: the meeting notes could not be read when this was built.
+Sources: the Granola notes of the 13 and 14 November meetings, and Scott's voice note on the first Not So Shite draft.
+
+- **Not So Shite** (`not-so-shite.html`) is other shops' products only. They are not ours and we do not sell them. The page says so in a yellow strip, in Scott's words. Do not use the word "affiliate" on the site (Scott, 14 Nov); the pages say "we may earn a commission" instead, which UK advertising rules still need.
+- Each Not So Shite product gets its own short page (`nss-<slug>.html`), generated from `_src/rave/_nss-product.html` and the `NSS` list in `_src/build.py`: catchy copy and a picture, then a button to the shop.
+- **Wear Shite** (`wear-shite.html`) is our own merch, our logo on clothes, printed to order. Products are the `WEAR` list in `_src/build.py`.
+- **After the scan** (`your-box.html`): charities at the top, each item explained, email as PDF, share, Trustpilot review, rewards wallet. It is a made-up sample box. Typing SB-00042 on Box Scan opens it.
+- **Order questions**: for you or someone else, name, occasion, good and bad at, three levels of harshness (not 1 to 10), "tell us anything else", and a consent tick that is needed before checkout unless Randomise is on.
+- **Ninja Box**: plain taped box. Eyes and glow removed.
+- The menu has six links and drops to its own row below 1240px.
+
+Examples, not decisions: every Not So Shite product, the shops named (targets from the meeting, none is a partner), the Wear Shite range and prices, the sample box, the harshness level names, and the rewards name ("Brownie Points") and amounts.
+
+Not done: the menu reorder (the note does not give the order), the Valentine's Day landing page, the Black Friday early-access idea.
 
 ## Rules that still apply
 
@@ -77,7 +87,9 @@ Copy
 
 - **Charity logos.** They are on the WTF page without the charities having been asked. They are registered trademarks; if a charity objects, swap its logo for the name in `CHARITY_LOGOS` in `_src/build.py`.
 - **Cancelling.** The small print states the 14-day right to cancel, with the buyer paying return postage, and says personalised boxes cannot be cancelled once packing starts. Scott has agreed the wording; it has not been checked by anyone legal.
-- **Forms.** The sign-up, order and box-number forms are mock-ups.
+- **Forms.** The sign-up, order, box-number, PDF and share forms are mock-ups.
+- **Shop names.** Oddballs, Hotel Chocolat and Interflora are named on Not So Shite as examples. None has agreed to anything. Take the names off, or get agreement, before the page is public.
+- **Commission wording.** "We may earn a commission" must stay next to every link to another shop.
 - `hello@unluckydip.com` and the WhatsApp number are placeholders.
 
 ## Building

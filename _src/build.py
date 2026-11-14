@@ -35,7 +35,8 @@ EMAIL = "hello@unluckydip.com"
 PAGES = [  # (file, nav label)
     ("index.html#boxes", "The boxes"),
     ("ninja.html", "Ninja Box"),
-    ("not-so-shite.html", "Not So Shite"),  # Ved, 14 Nov: the merch and partner section
+    ("not-so-shite.html", "Not So Shite"),  # other shops' products we think are good (Scott, 14 Nov)
+    ("wear-shite.html", "Wear Shite"),  # our own merch: our logo on clothes (Scott, 14 Nov)
     ("scan.html", "Box Scan"),
     ("wtf.html", "WTF is Shitebox?"),
 ]
@@ -94,13 +95,14 @@ SMALL_FULL = [
      ["Boxes are branded on the outside as standard. A Ninja Box is sent in a plain box with no Shitebox or unluckydip.com branding on the outside. "
       "The contents are the same and it costs no more."]),
     ("Making it personal",
-     ["Telling us about the person getting the box is optional. We use what you tell us to write the jokes for that box, "
-      "and for nothing else."]),
+     ["Telling us about the person getting the box is optional. If you do, we ask you to tick a box to say we may use your answers. "
+      "We use them to write the jokes for that box, and for nothing else."]),
     ("Not So Shite",
-     ["Not So Shite is the part of the shop where the products are meant to be good. Our merch is sent straight from our suppliers, "
-      "so it arrives on its own and not inside a Shitebox.",
-      "Partner picks are sold by other shops. The button takes you to their site, you buy from them, and their terms apply. "
-      "We may earn a commission when you do. It does not change the price you pay."]),
+     ["The things on the Not So Shite pages are not ours and we do not sell them. They are other shops' products that we think are good. "
+      "The button takes you to that shop, you buy from them, and their prices and terms apply.",
+      "We may earn a commission when you buy something this way. It does not change the price you pay."]),
+    ("Wear Shite",
+     ["Wear Shite is our own merchandise. Each item is printed to order, so it is sent separately and does not arrive inside a Shitebox."]),
     ("Disappointing is not a fault",
      ["The contents are meant to be rubbish. Not liking what you were given does not make an item faulty."]),
     ("Your right to cancel",
@@ -136,7 +138,7 @@ def footer(short=True):
     return f"""<footer>
   <div class="wrap">
     <div><a class="wordmark" href="index.html">{BRAND}<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
-    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
+    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="wear-shite.html">Wear Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:{EMAIL}">{EMAIL}</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
   </div>
@@ -178,10 +180,8 @@ document.addEventListener('click',function(e){var t=e.target.closest('[data-soon
 if(e.target===d)d.close()});})();
 </script>"""
 
-# ---- Not So Shite: the products ----
-# EXAMPLES ONLY, for the design preview. Each row is one product; in Shopify each becomes a product with the
-# same fields (title, one-line description, price, type). kind "merch" = we sell it and a supplier sends it
-# (drop shipping / print on demand). kind "partner" = an affiliate link out to another shop.
+# ---- Not So Shite and Wear Shite: the products ----
+# EXAMPLES ONLY, for the design preview. Nothing here is agreed with any shop or supplier.
 THUMB_ART = '<image href="../assets/brand/unlucky-dip-thumb.svg" x="{x}" y="{y}" width="{w}" height="{h}"/>'
 
 
@@ -190,52 +190,131 @@ def _thumb(x, y, w):
 
 
 ART = {
-    "mug": '<rect x="58" y="38" width="74" height="86" rx="8" fill="#fff"/><path d="M132 58h12a20 20 0 0 1 0 44h-12" fill="none"/>' + _thumb(74, 62, 42),
-    "tee": '<path d="M70 28 50 38 26 66l20 18 12-10v62h84V74l12 10 20-18-24-28-20-10q-30 22-60 0z" fill="#fff"/>' + _thumb(80, 72, 40),
-    "tote": '<path d="M76 62V44a24 24 0 0 1 48 0v18" fill="none"/><rect x="54" y="62" width="92" height="80" fill="#fff"/>' + _thumb(79, 82, 42),
-    "stickers": '<circle cx="70" cy="74" r="38" fill="#fff"/><circle cx="132" cy="92" r="38" fill="#fff"/>' + _thumb(50, 56, 40) + _thumb(112, 74, 40),
-    "cap": '<path d="M46 104a52 50 0 0 1 104 0z" fill="#fff"/><path d="M148 104h30q10 0 6 9l-4 7q-16-9-36-7z" fill="#fff"/>' + _thumb(80, 64, 34),
-    "card": '<g transform="rotate(-6 100 80)"><rect x="58" y="24" width="84" height="112" fill="#fff"/></g>' + _thumb(78, 58, 44),
-    "candle": '<rect x="68" y="72" width="64" height="66" rx="6" fill="#fff"/><path d="M100 72V62"/><path d="M100 30q16 18 0 32-16-14 0-32z" fill="#F8FF37"/><path d="M68 94h64"/>',
+    # other shops' things
+    "pants": '<path d="M40 38h120v34q-34 6-46 56H86q-12-50-46-56z" fill="#fff"/><path d="M40 54h120"/>'
+             '<g stroke="none"><circle cx="66" cy="76" r="6" fill="#F12BA5"/><circle cx="134" cy="76" r="6" fill="#7845F5"/>'
+             '<circle cx="100" cy="72" r="6" fill="#A7F12B"/><circle cx="84" cy="96" r="5" fill="#7845F5"/><circle cx="116" cy="96" r="5" fill="#F12BA5"/></g>',
     "socks": '<path d="M78 26h36v62l28 20a15 15 0 0 1-9 27h-22a33 33 0 0 1-33-33z" fill="#fff"/><path d="M78 44h36M78 56h36"/>',
-    "opener": '<circle cx="66" cy="80" r="30" fill="#fff"/><circle cx="66" cy="80" r="12" fill="none"/><rect x="92" y="68" width="84" height="24" rx="12" fill="#fff"/>',
-    "book": '<rect x="54" y="30" width="92" height="104" rx="4" fill="#fff"/><path d="M72 30v104M88 58h42M88 76h42M88 94h26"/>',
     "choc": '<rect x="42" y="46" width="116" height="72" rx="6" fill="#fff"/><path d="M71 46v72M100 46v72M129 46v72M42 82h116"/>',
+    "hotchoc": '<rect x="58" y="62" width="74" height="74" rx="8" fill="#fff"/><path d="M132 78h12a18 18 0 0 1 0 40h-12"/><path d="M82 46q-9-11 0-22M108 46q-9-11 0-22"/>',
+    "flowers": '<path d="M100 132V86M100 132 70 96M100 132l30-36"/><circle cx="100" cy="64" r="22" fill="#fff"/><circle cx="62" cy="82" r="18" fill="#fff"/>'
+               '<circle cx="138" cy="82" r="18" fill="#fff"/><path d="M80 150h40l-8-30H88z" fill="#fff"/>',
     "plant": '<path d="M100 96V52"/><path d="M100 70q-34-4-36-36 34 2 36 36zM100 60q30-8 30-40-32 6-30 40z" fill="#fff"/><path d="M70 96h60l-8 42H78z" fill="#fff"/>',
+    "candle": '<rect x="68" y="72" width="64" height="66" rx="6" fill="#fff"/><path d="M100 72V62"/><path d="M100 30q16 18 0 32-16-14 0-32z" fill="#F8FF37"/><path d="M68 94h64"/>',
+    "opener": '<circle cx="66" cy="80" r="30" fill="#fff"/><circle cx="66" cy="80" r="12" fill="none"/><rect x="92" y="68" width="84" height="24" rx="12" fill="#fff"/>',
+    # our merch
+    "tee": '<path d="M70 28 50 38 26 66l20 18 12-10v62h84V74l12 10 20-18-24-28-20-10q-30 22-60 0z" fill="#fff"/>' + _thumb(80, 72, 40),
+    "hoodie": '<path d="M68 36q32-26 64 0l34 22-14 30-16-8v58H64V80l-16 8-14-30z" fill="#fff"/><path d="M80 40q20 26 40 0"/><path d="M82 112h36v26H82z"/>' + _thumb(84, 70, 32),
+    "sweat": '<path d="M72 32q28 16 56 0l22 10 26 72-22 8-18-44v58H64V78l-18 44-22-8 26-72z" fill="#fff"/>' + _thumb(80, 68, 40),
+    "cap": '<path d="M46 104a52 50 0 0 1 104 0z" fill="#fff"/><path d="M148 104h30q10 0 6 9l-4 7q-16-9-36-7z" fill="#fff"/>' + _thumb(80, 64, 34),
+    "beanie": '<circle cx="100" cy="40" r="11" fill="#fff"/><path d="M52 108a48 58 0 0 1 96 0z" fill="#fff"/><rect x="44" y="104" width="112" height="30" rx="6" fill="#fff"/>' + _thumb(84, 64, 32),
+    "tote": '<path d="M76 62V44a24 24 0 0 1 48 0v18" fill="none"/><rect x="54" y="62" width="92" height="80" fill="#fff"/>' + _thumb(79, 82, 42),
 }
 
-PRODUCTS = [  # (kind, art, name, one line, price)
-    ("merch", "mug", "The Given Mug", "Says \"You get what you're given.\" Holds tea. That's the lot.", "£11.99"),
-    ("partner", "candle", "A candle that smells nice", "Of something pleasant, for once. Not of a charity shop.", "about £14"),
-    ("merch", "tee", "Sarcastic And Superb Tee", "For people who are both, or think they are.", "£19.99"),
-    ("partner", "socks", "Socks that are actually good", "The present you used to get. Only decent this time.", "about £9"),
-    ("merch", "tote", "Nifty At Being Thrifty Tote", "For carrying shite home from charity shops.", "£12.99"),
-    ("partner", "opener", "A proper bottle opener", "Opens bottles. First time. Imagine.", "about £12"),
-    ("merch", "stickers", "Thumbs-Down Stickers", "Review everything you own. Sheet of twelve.", "£3.99"),
-    ("partner", "book", "A book they might finish", "No promises. But it's a good one.", "about £9"),
-    ("merch", "cap", "Just Blame Us Cap", "Wear it when the present goes badly.", "£16.99"),
-    ("partner", "choc", "Decent chocolate", "The kind you don't share.", "about £6"),
-    ("merch", "card", "You Get What You're Given Card", "A greetings card that manages expectations.", "£3.49"),
-    ("partner", "plant", "A plant that's hard to kill", "We tested this the obvious way.", "about £15"),
+# Not So Shite (meeting of 14 Nov, and Scott's voice note): other shops' products that we think are good.
+# They are not ours and we never call them "affiliate" on the site. Each gets our own short write-up page,
+# then a button to the shop. seller=None means the shop is still to be found.
+# The shops named are the ones raised in the meeting as targets. None is a partner yet.
+NSS = [
+    dict(slug="very-loud-pants", seller="Oddballs", cat="wear", art="pants", name="Very Loud Pants",
+         line="Underwear with more personality than whoever's wearing it.",
+         pitch="The only loud thing we'd let near you. Bright, comfy, and nobody has to see them. Unless it goes well.",
+         why=["Comfy. Properly comfy.", "Louder than your uncle at a wedding.", "A present they'll use every day. Imagine."],
+         cta="Get them at Oddballs"),
+    dict(slug="chocolate-you-wont-share", seller="Hotel Chocolat", cat="eat", art="choc", name="Chocolate You Won't Share",
+         line="The kind you hide from people you love.",
+         pitch="Actual good chocolate. You'll say you're saving it. You're not.",
+         why=["Tastes like someone tried.", "Gone by Tuesday.", "Makes up for the Shitebox. Nearly."],
+         cta="Get it at Hotel Chocolat"),
+    dict(slug="flowers-that-say-sorry", seller="Interflora", cat="send", art="flowers", name="Flowers That Say Sorry",
+         line="For when the Shitebox went down badly.",
+         pitch="You sent them a box of shite. Now send the apology. Turns up at their door, looking like you meant it.",
+         why=["Delivered, so you don't have to face them.", "Nicer than you are.", "Works on mums."],
+         cta="Send them with Interflora"),
+    dict(slug="socks-with-opinions", seller="Oddballs", cat="wear", art="socks", name="Socks With Opinions",
+         line="The present you always got. Only good this time.",
+         pitch="Everyone gets socks. Nobody gets socks like these. Wear them to something serious.",
+         why=["Seen from across the room.", "Both of them match. Each other, at least.", "Still socks. Still useful."],
+         cta="Get them at Oddballs"),
+    dict(slug="hot-chocolate-that-isnt-dust", seller="Hotel Chocolat", cat="eat", art="hotchoc", name="Hot Chocolate That Isn't Dust",
+         line="Actual chocolate. In a mug. Revolutionary.",
+         pitch="Not the brown powder from the back of the cupboard. The real stuff, melted, like a grown-up would have it.",
+         why=["Made of chocolate. We checked.", "Fixes most Sundays.", "Better than the tea you were going to make."],
+         cta="Get it at Hotel Chocolat"),
+    dict(slug="a-plant-thats-hard-to-kill", seller="Interflora", cat="send", art="plant", name="A Plant That's Hard To Kill",
+         line="We tested this the obvious way.",
+         pitch="Green, alive and likely to stay that way. For the friend who has killed everything else.",
+         why=["Forgives neglect.", "Makes a room look like someone lives there.", "Outlasts the flowers."],
+         cta="Send one with Interflora"),
+    dict(slug="a-candle-that-smells-nice", seller=None, cat="house", art="candle", name="A Candle That Smells Nice",
+         line="Of something pleasant. Not of a charity shop.",
+         pitch="Light it and the room smells like you've got your life together. Nobody needs to know.",
+         why=["Smells of something on purpose.", "Hides the smell of the Shitebox.", "Burns for ages."],
+         cta="Get one at the shop"),
+    dict(slug="a-proper-bottle-opener", seller=None, cat="house", art="opener", name="A Proper Bottle Opener",
+         line="Opens bottles. First time. Imagine.",
+         pitch="Heavy, simple, works. The opposite of everything else we sell.",
+         why=["Opens the bottle.", "That's it.", "That's the whole feature."],
+         cta="Get one at the shop"),
+]
+
+# Wear Shite (Scott's voice note, 14 Nov): our merch. Our logo and our lines on clothes, printed to order.
+WEAR = [  # (art, name, one line, working price)
+    ("tee", "The Thumbs-Down Tee", "The logo. On your chest. Says it all.", "£19.99"),
+    ("hoodie", "You Get What You're Given Hoodie", "Warm. Smug. Has a pocket for your hands.", "£34.99"),
+    ("sweat", "Sarcastic And Superb Sweatshirt", "For people who are both, or think they are.", "£29.99"),
+    ("cap", "Just Blame Us Cap", "Wear it when the present goes badly.", "£16.99"),
+    ("beanie", "Can't Be Arsed Beanie", "For bad hair days and bad attitudes.", "£14.99"),
+    ("tote", "Nifty At Being Thrifty Tote", "For carrying shite home from charity shops.", "£12.99"),
 ]
 
 
-def products_html():
-    out = []
-    for i, (kind, art, name, line, price) in enumerate(PRODUCTS):
-        merch = kind == "merch"
-        tag = "Our merch" if merch else "Partner pick"
-        small = "+ delivery" if merch else "price set by the seller"
-        button = ('<button class="btn" type="button" data-soon>Add to basket</button>' if merch else
-                  '<a class="btn" href="#" rel="sponsored nofollow noopener" data-soon>View at the shop &rarr;</a>'
-                  '<span class="aff">Affiliate link. We may earn a commission.</span>')
-        out.append(
-            f'<li class="prod {kind} c{i % 4 + 1}" data-kind="{kind}"><span class="tag">{tag}</span>'
-            f'<div class="art"><svg viewBox="0 0 200 160" role="img" aria-label="Drawing: {name}" fill="none" stroke="#252525" '
-            f'stroke-width="6" stroke-linejoin="round" stroke-linecap="round">{ART[art]}</svg></div>'
-            f'<div class="body"><h3>{name}</h3><p>{line}</p>'
-            f'<p class="price">{price}<small>{small}</small></p>{button}</div></li>')
-    return "\n      ".join(out)
+def _svg(art, name):
+    return (f'<svg viewBox="0 0 200 160" role="img" aria-label="Drawing: {name}" fill="none" stroke="#252525" '
+            f'stroke-width="6" stroke-linejoin="round" stroke-linecap="round">{ART[art]}</svg>')
+
+
+def _sold_by(prod):
+    return f"From {prod['seller']}" if prod["seller"] else "Shop to be confirmed"
+
+
+def nss_card(i):
+    prod = NSS[i]
+    href = f"nss-{prod['slug']}.html"
+    return (f'<li class="prod c{i % 4 + 1}" data-cat="{prod["cat"]}">'
+            f'<a class="art" href="{href}" tabindex="-1" aria-hidden="true">{_svg(prod["art"], prod["name"])}</a>'
+            f'<div class="body"><p class="by">{_sold_by(prod)}</p><h3><a href="{href}">{prod["name"]}</a></h3>'
+            f'<p>{prod["line"]}</p><a class="btn" href="{href}">See why &rarr;</a></div></li>')
+
+
+def nss_cards(indexes=None):
+    return "\n      ".join(nss_card(i) for i in (range(len(NSS)) if indexes is None else indexes))
+
+
+def nss_page_tokens(i):
+    prod = NSS[i]
+    others = [(i + k) % len(NSS) for k in range(1, 5)]
+    return {
+        "P_NAME": prod["name"],
+        "P_LINE": prod["line"],
+        "P_PITCH": prod["pitch"],
+        "P_ART": ART[prod["art"]],
+        "P_C": str(i % 4 + 1),
+        "P_SOLD": (f"Not ours. Sold by {prod['seller']}." if prod["seller"] else "Not ours. Shop to be confirmed."),
+        "P_SELLER": prod["seller"] or "the shop",
+        "P_REASONS": "".join(f"<li>{w}</li>" for w in prod["why"]),
+        "P_CTA": prod["cta"],
+        "P_MORE": nss_cards(others),
+    }
+
+
+def wear_cards():
+    return "\n      ".join(
+        f'<li class="prod c{(i + 1) % 4 + 1}"><div class="art">{_svg(art, name)}</div>'
+        f'<div class="body"><h3>{name}</h3><p>{line}</p>'
+        f'<p class="price">{price}<small>+ delivery</small></p>'
+        f'<button class="btn" type="button" data-soon>Add to basket</button></div></li>'
+        for i, (art, name, line, price) in enumerate(WEAR))
 
 
 WA = ('<a class="wa" href="https://wa.me/447000000000?text=Hi%20unluckydip.com" aria-label="Chat on WhatsApp">'
@@ -257,8 +336,10 @@ TOKENS = {
     "NAV_SCAN": nav("scan.html"),
     "NAV_WTF": nav("wtf.html"),
     "NAV_NSS": nav("not-so-shite.html"),
-    "NSS_PRODUCTS": products_html(),
-    "NSS_COUNT": str(len(PRODUCTS)),
+    "NAV_WEAR": nav("wear-shite.html"),
+    "NSS_PRODUCTS": nss_cards(),
+    "NSS_COUNT": str(len(NSS)),
+    "WEAR_PRODUCTS": wear_cards(),
     "FOOTER": footer(),
     "FOOTER_PLAIN": footer(short=False),
     "FAQ": faq_html(),
@@ -279,21 +360,31 @@ TOKENS = {
 }
 
 
+def fill(html, tokens, name):
+    for k, v in tokens.items():
+        html = html.replace("{{" + k + "}}", v)
+    if "{{" in html:
+        raise SystemExit(f"{name}: unresolved token {{{{{html.split('{{')[1][:20]}")
+    return html
+
+
 def build():
     for slug in LIVE:
         out = ROOT / slug
         out.mkdir(exist_ok=True)
         for f in sorted((SRC / slug).iterdir()):
+            if f.name.startswith("_"):
+                continue  # a template for generated pages, see below
             if f.suffix == ".html":
-                html = f.read_text(encoding="utf-8")
-                for k, v in TOKENS.items():
-                    html = html.replace("{{" + k + "}}", v)
-                if "{{" in html:
-                    raise SystemExit(f"{f}: unresolved token {{{{{html.split('{{')[1][:20]}")
-                (out / f.name).write_text(html, encoding="utf-8")
+                (out / f.name).write_text(fill(f.read_text(encoding="utf-8"), TOKENS, f), encoding="utf-8")
             else:
                 shutil.copyfile(f, out / f.name)
-        print("built", slug, sorted(p.name for p in out.iterdir()))
+        # one page per Not So Shite product, from _nss-product.html
+        template = (SRC / slug / "_nss-product.html").read_text(encoding="utf-8")
+        for i, prod in enumerate(NSS):
+            name = f"nss-{prod['slug']}.html"
+            (out / name).write_text(fill(template, {**nss_page_tokens(i), **TOKENS}, name), encoding="utf-8")
+        print("built", slug, sorted(q.name for q in out.iterdir()))
 
 
 if __name__ == "__main__":

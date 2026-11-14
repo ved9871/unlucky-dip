@@ -39,18 +39,34 @@
       <p class="hint">The more you tell us, the better we aim. All of it is optional.</p>
       <button class="random" type="button" id="rand" aria-pressed="false"><span>Can't be arsed?</span> Randomise it</button>
       <p class="potluck" id="potluck" hidden role="status">Pot luck it is. We'll aim blind and hope for the worst. <button type="button" id="unrand">Actually, I'll answer</button></p>
+      <!-- Questions agreed 13 Nov: for you or someone else, name, good and bad at, occasion, harshness in three levels (not 1 to 10),
+           an open "anything else" box, and a consent tick before we use any of it. -->
       <div class="qs" id="qs">
-        <div class="f"><label for="q-name">Who is it for?</label><input id="q-name" name="name" autocomplete="off" placeholder="Lucy"></div>
-        <div class="f"><label for="q-shite">What are they shite at?</label><input id="q-shite" name="shite" autocomplete="off" placeholder="Parking. Any kind."></div>
-        <div class="f"><label for="q-great">What do they think they're great at?</label><input id="q-great" name="great" autocomplete="off" placeholder="Karaoke. They are wrong."></div>
-        <div class="f wide"><label for="q-stupid">What's the stupidest thing they've ever done?</label><textarea id="q-stupid" name="stupid" rows="2" placeholder="Locked themselves out. Twice. Same day."></textarea></div>
-        <div class="f wide range"><label for="q-harsh">How harsh can we be? <output id="q-out">7</output>/10</label><input id="q-harsh" name="harsh" type="range" min="1" max="10" value="7"></div>
+        <div class="f wide"><span class="lab" id="who-lab">Is this for you or someone else?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="who-lab">
+            <label><input type="radio" name="who" value="them" checked><span>Someone else</span></label>
+            <label><input type="radio" name="who" value="me"><span>Me. I've earned it.</span></label>
+          </div></div>
+        <div class="f"><label for="q-name" data-them="Who is it for?" data-me="What's your name?">Who is it for?</label><input id="q-name" name="name" autocomplete="off" placeholder="Lucy"></div>
+        <div class="f"><label for="q-occ">What's the occasion?</label><select id="q-occ" name="occasion"><option value="">No reason at all</option><option>Birthday</option><option>Christmas</option><option>Valentine's Day</option><option>Secret Santa</option><option>Leaving do</option><option>An apology</option><option>Revenge</option></select></div>
+        <div class="f"><label for="q-shite" data-them="What are they shite at?" data-me="What are you shite at?">What are they shite at?</label><input id="q-shite" name="shite" autocomplete="off" placeholder="Parking. Any kind."></div>
+        <div class="f"><label for="q-great" data-them="What do they think they're great at?" data-me="What do you think you're great at?">What do they think they're great at?</label><input id="q-great" name="great" autocomplete="off" placeholder="Karaoke. They are wrong."></div>
+        <div class="f two"><label for="q-stupid" data-them="What's the stupidest thing they've ever done?" data-me="What's the stupidest thing you've ever done?">What's the stupidest thing they've ever done?</label><textarea id="q-stupid" name="stupid" rows="2" placeholder="Locked themselves out. Twice. Same day."></textarea></div>
+        <div class="f wide"><span class="lab" id="harsh-lab">How harsh can we be?</span>
+          <div class="lvls" role="radiogroup" aria-labelledby="harsh-lab">
+            <label class="lvl l1"><input type="radio" name="harsh" value="1" data-name="Gentle ribbing"><b>Gentle ribbing</b><span>They'll laugh. Probably.</span></label>
+            <label class="lvl l2"><input type="radio" name="harsh" value="2" data-name="Proper roasting" checked><b>Proper roasting</b><span>They'll laugh, then go quiet.</span></label>
+            <label class="lvl l3"><input type="radio" name="harsh" value="3" data-name="No mercy"><b>No mercy</b><span>Are you sure you still want to know them?</span></label>
+          </div></div>
+        <div class="f wide"><label for="q-else">Tell us anything else</label><textarea id="q-else" name="else" rows="2" placeholder="Anything we should know. Or steer clear of."></textarea></div>
+        <label class="consent wide"><input type="checkbox" id="consent" name="consent"><span>I'm happy for unluckydip.com to use these answers to write the jokes for this box. That's all we use them for. <a href="small-print.html">The small print</a>.</span></label>
+        <p class="consent-err wide" id="consent-err" hidden role="alert">Tick the box so we're allowed to use your answers. Or hit Randomise and tell us nothing.</p>
       </div>
     </fieldset>
 
     <div class="tally" aria-live="polite">
-      <div><span class="eyebrow">Your order</span><p id="sum">The Little Shite. Loud and proud. Harshness 7 out of 10.</p></div>
-      <div class="pay"><span class="amt"><b id="sum-price">{{PRICE_S}}</b><small>+ {{POST}} postage</small></span><button class="btn" type="button" data-soon>Go to checkout</button></div>
+      <div><span class="eyebrow">Your order</span><p id="sum">The Little Shite. Loud and proud. Proper roasting.</p></div>
+      <div class="pay"><span class="amt"><b id="sum-price">{{PRICE_S}}</b><small>+ {{POST}} postage</small></span><button class="btn" type="button" id="checkout">Go to checkout</button></div>
     </div>
 
   </form>
@@ -68,12 +84,20 @@
   function setRandom(on){random=on;pot.hidden=!on;qs.hidden=on;rand.setAttribute('aria-pressed',on);rand.hidden=on;update()}
   rand.addEventListener('click',function(){setRandom(true)});
   document.getElementById('unrand').addEventListener('click',function(){setRandom(false);document.getElementById('q-name').focus()});
+  var consent=document.getElementById('consent'),err=document.getElementById('consent-err');
   function update(){
-    var b=f.querySelector('input[name=box]:checked'),o=f.querySelector('input[name=outside]:checked'),h=f.elements.harsh.value,n=f.elements.name.value.trim();
-    document.getElementById('q-out').textContent=h;
-    document.getElementById('sum').textContent=b.dataset.name+'. '+o.dataset.name+'. '+(random?'Pot luck.':(n?'For '+n+'. ':'')+'Harshness '+h+' out of 10.');
+    var b=f.querySelector('input[name=box]:checked'),o=f.querySelector('input[name=outside]:checked'),h=f.querySelector('input[name=harsh]:checked'),
+        me=f.querySelector('input[name=who]:checked').value==='me',n=f.elements.name.value.trim();
+    qs.querySelectorAll('label[data-them]').forEach(function(l){l.textContent=l.getAttribute(me?'data-me':'data-them')});
+    document.getElementById('sum').textContent=b.dataset.name+'. '+o.dataset.name+'. '+(random?'Pot luck.':(me?'For yourself. ':n?'For '+n+'. ':'')+h.dataset.name+'.');
     document.getElementById('sum-price').textContent=b.dataset.price;
+    if(consent.checked||random)err.hidden=true;
   }
+  // The consent tick is needed before we may use the answers. Randomise sends no answers, so it needs no tick.
+  document.getElementById('checkout').addEventListener('click',function(){
+    if(!random&&!consent.checked){err.hidden=false;consent.focus();return}
+    var d=document.getElementById('soon');if(d&&d.showModal)d.showModal();
+  });
   f.addEventListener('input',update);f.addEventListener('change',update);f.addEventListener('submit',function(e){e.preventDefault()});update();
 })();
 </script>

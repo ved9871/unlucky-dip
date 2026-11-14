@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<title>{{P_NAME}}. Not So Shite. unluckydip.com</title>
+<meta name="description" content="{{P_LINE}}">
+{{HEAD}}
+</head>
+<body>
+
+{{NAV_NSS}}
+
+<!-- One Not So Shite product (Ved and Scott, 13 and 14 Nov): our own write-up, catchy not long, then a button to the partner's shop.
+     Built from PRODUCTS in _src/build.py. In Shopify this is the product template for the Not So Shite collection. -->
+
+<main class="pp">
+  <div class="wrap">
+    <p class="crumb"><a href="not-so-shite.html">Not So Shite</a> <span aria-hidden="true">/</span> {{P_NAME}}</p>
+    <div class="pp-grid">
+      <div class="pp-art c{{P_C}}">
+        <svg viewBox="0 0 200 160" role="img" aria-label="Drawing: {{P_NAME}}" fill="none" stroke="#252525" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">{{P_ART}}</svg>
+        <p class="nss-stamp" aria-hidden="true">Not so shite<small>We checked</small></p>
+      </div>
+      <div class="pp-info">
+        <p class="eyebrow">{{P_SOLD}}</p>
+        <h1>{{P_NAME}}</h1>
+        <p class="lede">{{P_PITCH}}</p>
+        <ul class="why">{{P_REASONS}}</ul>
+        <p class="meter" aria-label="Shite rating: none out of 5"><span>Shite rating</span><i></i><i></i><i></i><i></i><i></i><em>0 out of 5. We're as surprised as you.</em></p>
+        <a class="btn big" href="#" rel="sponsored nofollow noopener" data-soon>{{P_CTA}} &rarr;</a>
+        <p class="aff">This one isn't ours. You buy it from {{P_SELLER}}, at their price, and we may earn a commission if you do.</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="ninja-strip" href="index.html#boxes">Feeling guilty about being this nice? <b>Send a Shitebox as well</b></a>
+
+  <section class="nss-grid more" aria-labelledby="pp-more">
+    <div class="wrap">
+      <h2 id="pp-more">More that's not so shite</h2>
+      <ul>
+      {{P_MORE}}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{{FOOTER_PLAIN}}
+
+{{SOON}}
+{{WA}}
+
+</body>
+</html>

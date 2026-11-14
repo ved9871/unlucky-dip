@@ -50,6 +50,7 @@
 document.getElementById('scanform').addEventListener('submit',function(e){
   e.preventDefault();
   var v=document.getElementById('boxno').value.trim().toUpperCase(),r=document.getElementById('scanres');
+  if(/^SB-?00042$/.test(v)){location.href='your-box.html';return} // the example number opens the sample "your box" page
   r.hidden=false;
   r.textContent=!v?'Type the number from your box first.':
     /^SB-?\d{3,6}$/.test(v)?'No box '+v+' on record yet. We have not sent any out. Check the number, or come back once yours has arrived.':

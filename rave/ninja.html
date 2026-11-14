@@ -13,15 +13,15 @@
 </head>
 <body class="ninja">
 
-<nav class="main" aria-label="Main"><div class="wrap"><a class="ud-logo" href="index.html" aria-label="unluckydip.com, home"><img src="../assets/brand/unlucky-dip-thumb.svg" alt="" width="36" height="33"><span>UNLUCKY<b>DIP</b><i>.COM</i></span></a><div class="links"><a href="index.html#boxes">The boxes</a><a href="ninja.html" aria-current="page">Ninja Box</a><a href="not-so-shite.html">Not So Shite</a><a href="scan.html">Box Scan</a><a href="wtf.html">WTF is Shitebox?</a></div><button class="cart" type="button" data-soon>Basket 0</button></div></nav>
+<nav class="main" aria-label="Main"><div class="wrap"><a class="ud-logo" href="index.html" aria-label="unluckydip.com, home"><img src="../assets/brand/unlucky-dip-thumb.svg" alt="" width="36" height="33"><span>UNLUCKY<b>DIP</b><i>.COM</i></span></a><div class="links"><a href="index.html#boxes">The boxes</a><a href="ninja.html" aria-current="page">Ninja Box</a><a href="not-so-shite.html">Not So Shite</a><a href="wear-shite.html">Wear Shite</a><a href="scan.html">Box Scan</a><a href="wtf.html">WTF is Shitebox?</a></div><button class="cart" type="button" data-soon>Basket 0</button></div></nav>
 
 <header class="nj-hero">
   <div class="wrap">
     <p class="eyebrow">Nobody sees it coming</p>
     <h1>Ninja Box.</h1>
-    <svg class="nj-box" viewBox="0 0 440 400" role="img" aria-label="A plain black box in a spotlight. The lid is open a crack, light is leaking out, and a pair of eyes is watching from a slot in the front. The address label is blacked out.">
+    <svg class="nj-box" viewBox="0 0 440 400" role="img" aria-label="A plain black box in a spotlight, taped shut. The address label is blacked out.">
       <defs>
-        <radialGradient id="nj-halo"><stop offset="0" stop-color="#7845F5" stop-opacity=".6"/><stop offset=".55" stop-color="#7845F5" stop-opacity=".16"/><stop offset="1" stop-color="#7845F5" stop-opacity="0"/></radialGradient>
+        <radialGradient id="nj-halo"><stop offset="0" stop-color="#7845F5" stop-opacity=".3"/><stop offset=".55" stop-color="#7845F5" stop-opacity=".08"/><stop offset="1" stop-color="#7845F5" stop-opacity="0"/></radialGradient>
         <linearGradient id="nj-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
         <linearGradient id="nj-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#191919"/><stop offset="1" stop-color="#040404"/></linearGradient>
         <linearGradient id="nj-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#161616"/></linearGradient>
@@ -36,27 +36,13 @@
         <text x="378" y="212" font-size="38" opacity=".38">?</text>
         <text x="340" y="150" font-size="28" opacity=".3">?</text>
       </g>
-      <!-- the box -->
+      <!-- the box: plain, matt and taped shut. No face and no glow (Scott, 13 Nov: it had too much character). -->
       <polygon points="300,160 380,98 380,298 300,360" fill="#030303"/>
       <rect x="60" y="160" width="240" height="200" fill="url(#nj-front)"/>
-      <!-- the lid, lifted a crack, with light getting out -->
-      <polygon points="60,160 300,160 380,98 384,78 138,78 56,144" fill="#000"/>
-      <polygon points="56,144 138,78 384,78 302,144" fill="url(#nj-top)"/>
-      <polygon points="146,144 228,78 254,78 172,144" fill="#4a4a4a"/>
-      <path d="M56 144 138 78H384L302 144Z M60 160V360H300L380 298V98 M300 160V360" fill="none" stroke="#7845F5" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
-      <g class="leak">
-        <path d="M64 153H300L379 90" fill="none" stroke="#A7F12B" stroke-width="16" stroke-linecap="round" filter="url(#nj-blur)"/>
-        <path d="M64 153H300L379 90" fill="none" stroke="#A7F12B" stroke-width="5" stroke-linecap="round" filter="url(#nj-glow)"/>
-        <path d="M64 153H300L379 90" fill="none" stroke="#f4ffd9" stroke-width="2" stroke-linecap="round"/>
-      </g>
-      <!-- someone is in there -->
-      <rect x="104" y="226" width="152" height="34" rx="5" fill="#000" stroke="#2c2c2c" stroke-width="2"/>
-      <g class="eyes" filter="url(#nj-glow)">
-        <path d="M124 245q19-15 40-3q-19 13-40 3z" fill="#eaffc4"/>
-        <path d="M196 242q21-12 40 3q-21 10-40-3z" fill="#eaffc4"/>
-        <circle class="pupil" cx="147" cy="243" r="5.5" fill="#050505"/>
-        <circle class="pupil" cx="213" cy="243" r="5.5" fill="#050505"/>
-      </g>
+      <polygon points="60,160 300,160 380,98 140,98" fill="url(#nj-top)"/>
+      <polygon points="166,160 194,160 274,98 246,98" fill="#4a4a4a"/>
+      <rect x="166" y="160" width="28" height="46" fill="#3d3d3d"/>
+      <path d="M60 160 140 98H380L300 160Z M60 160V360H300L380 298V98 M300 160V360" fill="none" stroke="#7845F5" stroke-width="2.5" stroke-linejoin="round" opacity=".55"/>
       <!-- the label gives nothing away -->
       <g transform="rotate(-3 120 318)">
         <rect x="78" y="296" width="104" height="46" fill="#ece8fa"/>
@@ -110,7 +96,7 @@
 <footer>
   <div class="wrap">
     <div><a class="wordmark" href="index.html">unluckydip.com<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
-    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
+    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="wear-shite.html">Wear Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:hello@unluckydip.com">hello@unluckydip.com</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
   </div>

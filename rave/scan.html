@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<nav class="main" aria-label="Main"><div class="wrap"><a class="ud-logo" href="index.html" aria-label="unluckydip.com, home"><img src="../assets/brand/unlucky-dip-thumb.svg" alt="" width="36" height="33"><span>UNLUCKY<b>DIP</b><i>.COM</i></span></a><div class="links"><a href="index.html#boxes">The boxes</a><a href="ninja.html">Ninja Box</a><a href="not-so-shite.html">Not So Shite</a><a href="scan.html" aria-current="page">Box Scan</a><a href="wtf.html">WTF is Shitebox?</a></div><button class="cart" type="button" data-soon>Basket 0</button></div></nav>
+<nav class="main" aria-label="Main"><div class="wrap"><a class="ud-logo" href="index.html" aria-label="unluckydip.com, home"><img src="../assets/brand/unlucky-dip-thumb.svg" alt="" width="36" height="33"><span>UNLUCKY<b>DIP</b><i>.COM</i></span></a><div class="links"><a href="index.html#boxes">The boxes</a><a href="ninja.html">Ninja Box</a><a href="not-so-shite.html">Not So Shite</a><a href="wear-shite.html">Wear Shite</a><a href="scan.html" aria-current="page">Box Scan</a><a href="wtf.html">WTF is Shitebox?</a></div><button class="cart" type="button" data-soon>Basket 0</button></div></nav>
 
 <header class="scan-hero">
   <div class="wrap">
@@ -50,7 +50,7 @@
 <footer>
   <div class="wrap">
     <div><a class="wordmark" href="index.html">unluckydip.com<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
-    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
+    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="wear-shite.html">Wear Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:hello@unluckydip.com">hello@unluckydip.com</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
   </div>
@@ -81,6 +81,7 @@ if(e.target===d)d.close()});})();
 document.getElementById('scanform').addEventListener('submit',function(e){
   e.preventDefault();
   var v=document.getElementById('boxno').value.trim().toUpperCase(),r=document.getElementById('scanres');
+  if(/^SB-?00042$/.test(v)){location.href='your-box.html';return} // the example number opens the sample "your box" page
   r.hidden=false;
   r.textContent=!v?'Type the number from your box first.':
     /^SB-?\d{3,6}$/.test(v)?'No box '+v+' on record yet. We have not sent any out. Check the number, or come back once yours has arrived.':
