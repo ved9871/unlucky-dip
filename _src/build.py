@@ -35,6 +35,7 @@ EMAIL = "hello@unluckydip.com"
 PAGES = [  # (file, nav label)
     ("index.html#boxes", "The boxes"),
     ("ninja.html", "Ninja Box"),
+    ("not-so-shite.html", "Not So Shite"),  # Ved, 14 Nov: the merch and partner section
     ("scan.html", "Box Scan"),
     ("wtf.html", "WTF is Shitebox?"),
 ]
@@ -95,6 +96,11 @@ SMALL_FULL = [
     ("Making it personal",
      ["Telling us about the person getting the box is optional. We use what you tell us to write the jokes for that box, "
       "and for nothing else."]),
+    ("Not So Shite",
+     ["Not So Shite is the part of the shop where the products are meant to be good. Our merch is sent straight from our suppliers, "
+      "so it arrives on its own and not inside a Shitebox.",
+      "Partner picks are sold by other shops. The button takes you to their site, you buy from them, and their terms apply. "
+      "We may earn a commission when you do. It does not change the price you pay."]),
     ("Disappointing is not a fault",
      ["The contents are meant to be rubbish. Not liking what you were given does not make an item faulty."]),
     ("Your right to cancel",
@@ -130,7 +136,7 @@ def footer(short=True):
     return f"""<footer>
   <div class="wrap">
     <div><a class="wordmark" href="index.html">{BRAND}<small>Home of Shitebox</small></a><p>Making gift giving worse. On purpose.</p><img class="tape" src="../assets/brand/unlucky-dip-tape.svg" alt="Parcel tape that reads: beware, crap inside. unluckydip.com"></div>
-    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
+    <div><h4>Shop</h4><ul><li><a href="index.html#boxes">The Little Shite</a></li><li><a href="index.html#boxes">The Big Shite</a></li><li><a href="ninja.html">Ninja Box</a></li><li><a href="not-so-shite.html">Not So Shite</a></li><li><a href="scan.html">Box Scan</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="wtf.html">WTF is Shitebox?</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="small-print.html">The small print</a></li><li><a href="mailto:{EMAIL}">{EMAIL}</a></li></ul></div>
     <div><h4>Follow</h4><ul><li><a href="#">TikTok</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
   </div>
@@ -151,7 +157,7 @@ def small_full_html():
     return "\n    ".join(out)
 
 
-PREVIEW = "Design preview, 12 November 2026. Nothing is for sale yet and the prices are working numbers."
+PREVIEW = "Design preview, 14 November 2026. Nothing is for sale yet and the prices are working numbers."
 
 # Scott, 11 Nov: "Not on sale yet" is no longer a section. It pops up when someone tries to buy.
 SOON = """<dialog class="soon" id="soon" aria-labelledby="soon-h">
@@ -172,6 +178,66 @@ document.addEventListener('click',function(e){var t=e.target.closest('[data-soon
 if(e.target===d)d.close()});})();
 </script>"""
 
+# ---- Not So Shite: the products ----
+# EXAMPLES ONLY, for the design preview. Each row is one product; in Shopify each becomes a product with the
+# same fields (title, one-line description, price, type). kind "merch" = we sell it and a supplier sends it
+# (drop shipping / print on demand). kind "partner" = an affiliate link out to another shop.
+THUMB_ART = '<image href="../assets/brand/unlucky-dip-thumb.svg" x="{x}" y="{y}" width="{w}" height="{h}"/>'
+
+
+def _thumb(x, y, w):
+    return THUMB_ART.format(x=x, y=y, w=w, h=round(w * 25 / 27, 1))
+
+
+ART = {
+    "mug": '<rect x="58" y="38" width="74" height="86" rx="8" fill="#fff"/><path d="M132 58h12a20 20 0 0 1 0 44h-12" fill="none"/>' + _thumb(74, 62, 42),
+    "tee": '<path d="M70 28 50 38 26 66l20 18 12-10v62h84V74l12 10 20-18-24-28-20-10q-30 22-60 0z" fill="#fff"/>' + _thumb(80, 72, 40),
+    "tote": '<path d="M76 62V44a24 24 0 0 1 48 0v18" fill="none"/><rect x="54" y="62" width="92" height="80" fill="#fff"/>' + _thumb(79, 82, 42),
+    "stickers": '<circle cx="70" cy="74" r="38" fill="#fff"/><circle cx="132" cy="92" r="38" fill="#fff"/>' + _thumb(50, 56, 40) + _thumb(112, 74, 40),
+    "cap": '<path d="M46 104a52 50 0 0 1 104 0z" fill="#fff"/><path d="M148 104h30q10 0 6 9l-4 7q-16-9-36-7z" fill="#fff"/>' + _thumb(80, 64, 34),
+    "card": '<g transform="rotate(-6 100 80)"><rect x="58" y="24" width="84" height="112" fill="#fff"/></g>' + _thumb(78, 58, 44),
+    "candle": '<rect x="68" y="72" width="64" height="66" rx="6" fill="#fff"/><path d="M100 72V62"/><path d="M100 30q16 18 0 32-16-14 0-32z" fill="#F8FF37"/><path d="M68 94h64"/>',
+    "socks": '<path d="M78 26h36v62l28 20a15 15 0 0 1-9 27h-22a33 33 0 0 1-33-33z" fill="#fff"/><path d="M78 44h36M78 56h36"/>',
+    "opener": '<circle cx="66" cy="80" r="30" fill="#fff"/><circle cx="66" cy="80" r="12" fill="none"/><rect x="92" y="68" width="84" height="24" rx="12" fill="#fff"/>',
+    "book": '<rect x="54" y="30" width="92" height="104" rx="4" fill="#fff"/><path d="M72 30v104M88 58h42M88 76h42M88 94h26"/>',
+    "choc": '<rect x="42" y="46" width="116" height="72" rx="6" fill="#fff"/><path d="M71 46v72M100 46v72M129 46v72M42 82h116"/>',
+    "plant": '<path d="M100 96V52"/><path d="M100 70q-34-4-36-36 34 2 36 36zM100 60q30-8 30-40-32 6-30 40z" fill="#fff"/><path d="M70 96h60l-8 42H78z" fill="#fff"/>',
+}
+
+PRODUCTS = [  # (kind, art, name, one line, price)
+    ("merch", "mug", "The Given Mug", "Says \"You get what you're given.\" Holds tea. That's the lot.", "£11.99"),
+    ("partner", "candle", "A candle that smells nice", "Of something pleasant, for once. Not of a charity shop.", "about £14"),
+    ("merch", "tee", "Sarcastic And Superb Tee", "For people who are both, or think they are.", "£19.99"),
+    ("partner", "socks", "Socks that are actually good", "The present you used to get. Only decent this time.", "about £9"),
+    ("merch", "tote", "Nifty At Being Thrifty Tote", "For carrying shite home from charity shops.", "£12.99"),
+    ("partner", "opener", "A proper bottle opener", "Opens bottles. First time. Imagine.", "about £12"),
+    ("merch", "stickers", "Thumbs-Down Stickers", "Review everything you own. Sheet of twelve.", "£3.99"),
+    ("partner", "book", "A book they might finish", "No promises. But it's a good one.", "about £9"),
+    ("merch", "cap", "Just Blame Us Cap", "Wear it when the present goes badly.", "£16.99"),
+    ("partner", "choc", "Decent chocolate", "The kind you don't share.", "about £6"),
+    ("merch", "card", "You Get What You're Given Card", "A greetings card that manages expectations.", "£3.49"),
+    ("partner", "plant", "A plant that's hard to kill", "We tested this the obvious way.", "about £15"),
+]
+
+
+def products_html():
+    out = []
+    for i, (kind, art, name, line, price) in enumerate(PRODUCTS):
+        merch = kind == "merch"
+        tag = "Our merch" if merch else "Partner pick"
+        small = "+ delivery" if merch else "price set by the seller"
+        button = ('<button class="btn" type="button" data-soon>Add to basket</button>' if merch else
+                  '<a class="btn" href="#" rel="sponsored nofollow noopener" data-soon>View at the shop &rarr;</a>'
+                  '<span class="aff">Affiliate link. We may earn a commission.</span>')
+        out.append(
+            f'<li class="prod {kind} c{i % 4 + 1}" data-kind="{kind}"><span class="tag">{tag}</span>'
+            f'<div class="art"><svg viewBox="0 0 200 160" role="img" aria-label="Drawing: {name}" fill="none" stroke="#252525" '
+            f'stroke-width="6" stroke-linejoin="round" stroke-linecap="round">{ART[art]}</svg></div>'
+            f'<div class="body"><h3>{name}</h3><p>{line}</p>'
+            f'<p class="price">{price}<small>{small}</small></p>{button}</div></li>')
+    return "\n      ".join(out)
+
+
 WA = ('<a class="wa" href="https://wa.me/447000000000?text=Hi%20unluckydip.com" aria-label="Chat on WhatsApp">'
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>'
       "<span>Ask us. We'll try.</span></a>")
@@ -190,6 +256,9 @@ TOKENS = {
     "NAV_NINJA": nav("ninja.html"),
     "NAV_SCAN": nav("scan.html"),
     "NAV_WTF": nav("wtf.html"),
+    "NAV_NSS": nav("not-so-shite.html"),
+    "NSS_PRODUCTS": products_html(),
+    "NSS_COUNT": str(len(PRODUCTS)),
     "FOOTER": footer(),
     "FOOTER_PLAIN": footer(short=False),
     "FAQ": faq_html(),

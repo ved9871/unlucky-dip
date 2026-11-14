@@ -28,11 +28,12 @@ nav.main .wrap{display:flex;align-items:stretch;justify-content:space-between;ga
 .ud-logo b{font-weight:400;color:var(--pink)}
 .ud-logo i{font-style:normal;color:var(--ink)}
 .links{display:flex;flex:1}
-.links a{display:flex;align-items:center;padding-inline:1.1rem;border-right:var(--rule);font-family:var(--poster);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;font-size:1.05rem}
+.links a{display:flex;align-items:center;white-space:nowrap;padding-inline:1.1rem;border-right:var(--rule);font-family:var(--poster);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;font-size:1.05rem}
 .links a:hover,.links a[aria-current=page]{background:var(--ink);color:var(--yellow)}
 .cart{display:flex;align-items:center;padding-inline:1.25rem max(16px,env(safe-area-inset-right,0px));background:var(--ink);color:var(--yellow);font-family:var(--poster);font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border:0;cursor:pointer}
 .cart:hover{background:var(--pink);color:#fff}
-@media (max-width:900px){nav.main .wrap{flex-wrap:wrap}.links{order:3;flex:0 0 100%;overflow-x:auto;border-top:var(--rule);scrollbar-width:none}.links a{white-space:nowrap;min-height:44px;font-size:.95rem}.ud-logo,.cart{min-height:60px}}
+/* five links since 14 Nov (Not So Shite), so the links drop to their own row a little earlier */
+@media (max-width:1080px){nav.main .wrap{flex-wrap:wrap}.links{order:3;flex:0 0 100%;overflow-x:auto;border-top:var(--rule);scrollbar-width:none}.links a{white-space:nowrap;min-height:44px;font-size:.95rem}.ud-logo,.cart{min-height:60px}}
 @media (max-width:420px){.ud-logo{font-size:1.05rem}.ud-logo img{width:30px}}
 
 /* ---- home hero: shorter, one message, purple paint (the WTF page keeps the yellow) ---- */
@@ -347,3 +348,53 @@ body.ninja{--night:#150A38;background:var(--night);color:#f4f2ff;--rule:4px soli
 .nobox h3{font-size:2rem;margin-bottom:.6rem}
 .nobox .idiot{font-family:var(--display);font-size:1.25rem;line-height:1.15;margin:0 0 .9rem}
 @media (max-width:860px){.scan-form .wrap{grid-template-columns:1fr}}
+
+/* ---- Not So Shite page (Ved, 14 Nov): merch and partner picks. The one place the products are meant to be good. ---- */
+.nss-hero{background:var(--lime);border-bottom:var(--rule);overflow:hidden}
+.nss-hero .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(1.5rem,5vw,4rem);align-items:center;padding-block:clamp(2.5rem,6vw,4.5rem)}
+.nss-hero h1{font-size:clamp(4rem,13vw,10rem);line-height:.86}
+.nss-hero h1 span{display:inline-block;background:var(--ink);color:var(--lime);padding:.02em .12em 0;margin-top:.06em;transform:rotate(-2deg)}
+.nss-hero .lede{max-width:38rem;font-size:1.2rem;font-weight:700;margin:1.6rem 0 0}
+.nss-stamp{width:clamp(150px,20vw,230px);aspect-ratio:1;display:grid;place-content:center;text-align:center;background:var(--pink);color:var(--white);border:var(--rule);border-radius:50%;box-shadow:8px 8px 0 var(--ink);font-family:var(--poster);text-transform:uppercase;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:.95;transform:rotate(-10deg);padding:1rem;margin:0}
+.nss-stamp small{display:block;font-family:var(--body);font-weight:900;font-size:.62rem;letter-spacing:.12em;margin-top:.45rem}
+@media (max-width:760px){.nss-hero .wrap{grid-template-columns:1fr}.nss-stamp{display:none}}
+.nss-bar{background:var(--ink);color:var(--white);border-bottom:var(--rule);position:sticky;top:64px;z-index:10}
+.nss-bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding-block:.7rem}
+.nss-bar .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{min-height:44px;padding:0 1rem;border:3px solid var(--white);background:transparent;color:var(--white);font-family:var(--poster);font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.chip:hover{border-color:var(--yellow);color:var(--yellow)}
+.chip[aria-pressed=true]{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.nss-bar .count{margin:0 0 0 auto;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+@media (max-width:1080px){.nss-bar{position:static}}
+.nss-grid{background:var(--white)}
+.nss-grid .wrap{padding-block:2rem 3rem}
+.nss-grid .eg{margin:0 0 1.25rem;font-size:.85rem;font-weight:700;border:3px dashed var(--ink);padding:.6rem .8rem;max-width:46rem}
+.nss-grid ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.prod{display:flex;flex-direction:column;border:var(--rule);background:var(--white);min-width:0;position:relative;transition:transform .15s ease,box-shadow .15s ease}
+.prod:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.prod[hidden]{display:none}
+.prod .art{aspect-ratio:5/4;border-bottom:var(--rule);display:grid;place-items:center}
+.prod .art svg{width:76%;height:auto}
+.prod.c1 .art{background:var(--lime)}.prod.c2 .art{background:var(--pink)}.prod.c3 .art{background:var(--yellow)}.prod.c4 .art{background:var(--purple)}
+.prod .tag{position:absolute;top:.6rem;left:.6rem;z-index:1;font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;padding:.3rem .5rem;border:3px solid var(--ink);background:var(--ink);color:var(--yellow);transform:rotate(-3deg)}
+.prod.partner .tag{background:var(--white);color:var(--ink)}
+.prod .body{display:flex;flex-direction:column;gap:.45rem;padding:1rem;flex:1}
+.prod h3{font-size:1.55rem;line-height:1.02}
+.prod p{margin:0;font-weight:600;font-size:.92rem}
+.prod .price{font-family:var(--poster);font-weight:400;font-size:2rem;line-height:1;margin-top:auto;padding-top:.6rem}
+.prod .price small{display:block;font-family:var(--body);font-weight:800;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.3rem}
+.prod .btn{width:100%;min-height:48px;font-size:1rem;padding:0 .6rem;text-align:center}
+.prod.partner .btn{background:var(--white);color:var(--ink)}
+.prod.partner .btn:hover{background:var(--yellow);color:var(--ink)}
+.prod .aff{font-size:.7rem;font-weight:700}
+@media (max-width:1000px){.nss-grid ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.nss-grid ul{grid-template-columns:1fr 1fr;gap:.75rem}.prod h3{font-size:1.2rem}.prod .body{padding:.7rem}.prod p{font-size:.84rem}.prod .price{font-size:1.6rem}.prod .btn{font-size:.9rem;letter-spacing:.03em}}
+@media (prefers-reduced-motion:reduce){.prod{transition:none}.prod:hover{transform:none}}
+.nss-how{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--rule)}
+.nss-how article{padding:2rem clamp(1rem,3vw,2rem);border-right:var(--rule);background:var(--yellow);min-width:0}
+.nss-how article:last-child{border-right:0;background:var(--purple);color:var(--white)}
+.nss-how h2{font-size:2.2rem;margin-bottom:.7rem}
+.nss-how p{margin:0 0 .9rem;font-weight:600;max-width:34rem}
+.nss-how .btn{background:var(--yellow);color:var(--ink)}
+.nss-how .btn:hover{background:var(--white);color:var(--ink)}
+@media (max-width:860px){.nss-how{grid-template-columns:1fr}.nss-how article{border-right:0;border-bottom:var(--rule)}.nss-how article:last-child{border-bottom:0}}

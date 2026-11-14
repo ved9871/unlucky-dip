@@ -12,6 +12,7 @@ Preview: https://unlucky-dip.prakashved155.workers.dev/
 | Order ("Set the trap") | [rave/order](https://unlucky-dip.prakashved155.workers.dev/rave/order) |
 | Ninja Box | [rave/ninja](https://unlucky-dip.prakashved155.workers.dev/rave/ninja) |
 | Box Scan | [rave/scan](https://unlucky-dip.prakashved155.workers.dev/rave/scan) |
+| Not So Shite (merch and partner picks) | [rave/not-so-shite](https://unlucky-dip.prakashved155.workers.dev/rave/not-so-shite) |
 | WTF is Shitebox? | [rave/wtf](https://unlucky-dip.prakashved155.workers.dev/rave/wtf) |
 | Small print | [rave/small-print](https://unlucky-dip.prakashved155.workers.dev/rave/small-print) |
 
@@ -54,6 +55,15 @@ Copy
 - Box Scan: Scott's new intro (full Shitebox experience, easter eggs) and "Then there's nothing to scan idiot…".
 - WTF page: the five charities show their own logos, set as shop signs (Ved, 12 Nov: use the logos directly). The files in `assets/charities/` come from each charity's own website. The line underneath still says they have not endorsed us.
 - A "Shitebox." wordmark sits on the hero picture as a stand-in until Scott's new picture arrives.
+
+## Added 14 November 2026: Not So Shite
+
+- `not-so-shite.html` is the merch and partner section (Ved, 14 Nov). It is the fifth menu link, so the menu drops to its own row below 1080px.
+- Products are a list in `_src/build.py` (`PRODUCTS`). Each is either `merch` (sold by us, sent by a supplier: drop shipping or print on demand) or `partner` (an affiliate link out to another shop).
+- The twelve products are **examples** with drawn pictures. The real products, suppliers and affiliate partners are not chosen.
+- Partner cards carry "Affiliate link. We may earn a commission." and the links use `rel="sponsored nofollow"`. UK advertising rules need affiliate links to be labelled, so keep that when the real ones go in.
+- The small print gained a "Not So Shite" section explaining both kinds. That wording was written for the preview and has not been checked legally.
+- Scott's feedback from the meetings of 13 and 14 November is **not** applied: the meeting notes could not be read when this was built.
 
 ## Rules that still apply
 
